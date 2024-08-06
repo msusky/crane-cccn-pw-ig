@@ -1,0 +1,37 @@
+{
+     "name": "eu.crane4health.cccn-pw",
+     "version": "0.1.0",
+     "description": "CraNE CCCN Lung Cancer Pathway Implmentation Guide",
+     "keywords": [
+       "CraNE",
+       "CCCN",
+       "Lung Cancer",
+       "Pathway"
+     ],
+     "type": "IG",
+     "license": "CC0-1.0",
+     "canonical": "http://crane4health.eu/fhir/ImplementationGuide/crane-cccn-pw-ig",
+     "url": "https://simplifier.net/crane-cccn-pw-ig",
+     "title": "CraNE CCCN Lung Cancer Pathway IG",
+     "dependencies": {
+       "hl7.fhir.uv.cpg": "2.0.0-ballot"
+     },
+     "author": "CraNE Joint Action",
+     "jurisdiction": "http://unstats.un.org/unsd/methods/m49/m49.htm#150",
+     "fhirVersions": [
+       "4.0.1"
+     ],
+     "language": "en",
+     "homepage": "https://crane4health.eu",
+     "maintainers" : [{
+       "name" : "CraNE Joint Action",
+       "url" : "https://crane4health.eu"
+     }],
+     "bugs": {
+       "url": "https://github.com/msusky/crane-cccn-pw-ig/issues"
+     },
+     "repository": {
+       "type": "git",
+       "url": "https://github.com/msusky/crane-cccn-pw-ig.git"
+     }
+   }

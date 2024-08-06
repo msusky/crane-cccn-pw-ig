@@ -1,0 +1,90 @@
+{
+  "Timestamp": "2024-07-23T07:47:01.663126+00:00",
+  "Files": {
+    "guides/crane-cccn-pw-ig/guide.yaml": {
+      "Length": 178,
+      "LastWriteTime": "2024-06-20T17:27:42+00:00",
+      "Hash": "9B68D592A130CB0B09CAC65B0798D5A2"
+    },
+    "guides/crane-cccn-pw-ig/Home/About/Index.page.md": {
+      "Length": 1566,
+      "LastWriteTime": "2024-07-23T13:03:50+00:00",
+      "Hash": "6AF8DA5CAA595BD1BDDCD3C05131DF65"
+    },
+    "guides/crane-cccn-pw-ig/Home/About/toc.yaml": {
+      "Length": 42,
+      "LastWriteTime": "2024-06-21T16:34:08+00:00",
+      "Hash": "10D5FFAF5706D57E8ABBD3FBD839FAEB"
+    },
+    "guides/crane-cccn-pw-ig/Home/Index.page.md": {
+      "Length": 2548,
+      "LastWriteTime": "2024-07-23T12:44:12+00:00",
+      "Hash": "23CAD19FEE29802E3B0B87D52055A769"
+    },
+    "guides/crane-cccn-pw-ig/Home/Motivation/Task-Description.page.md": {
+      "Length": 2889,
+      "LastWriteTime": "2024-07-23T13:03:34+00:00",
+      "Hash": "17ACD1D7BAD84785FAB417872D590A5E"
+    },
+    "guides/crane-cccn-pw-ig/Home/Patient-Pathway/Artifacts.page.md": {
+      "Length": 1566,
+      "LastWriteTime": "2024-07-23T13:03:44+00:00",
+      "Hash": "6AF8DA5CAA595BD1BDDCD3C05131DF65"
+    },
+    "guides/crane-cccn-pw-ig/Home/Patient-Pathway/BPMN-Process-Model.page.md": {
+      "Length": 3996,
+      "LastWriteTime": "2024-07-23T13:03:42+00:00",
+      "Hash": "E7174FB868385A2473A7C3EFA7FFB9CE"
+    },
+    "guides/crane-cccn-pw-ig/Home/Patient-Pathway/Index.page.md": {
+      "Length": 1566,
+      "LastWriteTime": "2024-07-23T13:03:38+00:00",
+      "Hash": "6AF8DA5CAA595BD1BDDCD3C05131DF65"
+    },
+    "guides/crane-cccn-pw-ig/Home/Patient-Pathway/toc.yaml": {
+      "Length": 160,
+      "LastWriteTime": "2024-06-21T16:37:32+00:00",
+      "Hash": "77D65ED56E3706536BCDF641CF6D2E89"
+    },
+    "guides/crane-cccn-pw-ig/Home/Motivation/Index.page.md": {
+      "Length": 1566,
+      "LastWriteTime": "2024-07-23T13:03:32+00:00",
+      "Hash": "6AF8DA5CAA595BD1BDDCD3C05131DF65"
+    },
+    "guides/crane-cccn-pw-ig/Home/Motivation/toc.yaml": {
+      "Length": 106,
+      "LastWriteTime": "2024-06-21T16:36:08+00:00",
+      "Hash": "6BA3AE91328A7F1E0543050B4F19A759"
+    },
+    "guides/crane-cccn-pw-ig/Home/toc.yaml": {
+      "Length": 174,
+      "LastWriteTime": "2024-06-21T16:37:00+00:00",
+      "Hash": "8B0D8F8D34440744ECC751D773D45661"
+    },
+    "package.json": {
+      "Length": 104,
+      "LastWriteTime": "2024-06-20T16:45:52+00:00",
+      "Hash": "A606472D97A4A4E9364D1464F6973093"
+    },
+    "guides/crane-cccn-pw-ig/toc.yaml": {
+      "Length": 32,
+      "LastWriteTime": "2024-06-21T16:34:54+00:00",
+      "Hash": "3E2BC1817DFD8F2BD16B380005C2838F"
+    },
+    "project.yaml": {
+      "Length": 19,
+      "LastWriteTime": "2024-07-23T07:47:01.0238221+00:00",
+      "Hash": "DEE612657E1B3387115956B717639B80"
+    },
+    "guides/crane-cccn-pw-ig/styles/style.css": {
+      "Length": 1040,
+      "LastWriteTime": "2024-07-23T14:25:11.6374836+00:00",
+      "Hash": "89CFB0E0F53FC9ED01C6888BEE840385"
+    },
+    "Style.snippet.md": {
+      "Length": 115,
+      "LastWriteTime": "2024-07-23T12:44:00+00:00",
+      "Hash": "CDD9B88B7526C2449BD6B7DFBDD3C1DD"
+    }
+  }
+}

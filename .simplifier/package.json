@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "hl7.fhir.r4.core": "4.0.1",
+    "hl7.fhir.uv.cpg": "2.0.0-ballot"
+  },
+  "fhirVersions": [
+    "4.0.1"
+  ]
+}

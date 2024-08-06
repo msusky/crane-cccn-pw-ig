@@ -1,0 +1,6 @@
+- name: Index
+  filename: Index.page.md
+- name: BPMN Process Model
+  filename: BPMN-Process-Model.page.md
+- name: Artifacts
+  filename: Artifacts.page.md
