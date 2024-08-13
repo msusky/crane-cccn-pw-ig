@@ -71,6 +71,7 @@ Usage: #definition
 * action[=].relatedAction[+].actionId = "cccn-care"
 * action[=].relatedAction[=].relationship = #before-start
 * action[=].selectionBehavior = #all
+* action[=].definitionCanonical = Canonical(crane-cccn-definition-activity-treatment-planning)
 
 // BPMN Group: Treatment
 * action[+].id = "cccn-care"
