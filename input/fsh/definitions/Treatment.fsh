@@ -1,0 +1,118 @@
+Instance: crane-cccn-definition-activity-treatment
+InstanceOf: CraNE_CCCN_Lung_Cancer_Pathway_Activity
+Title: "CraNE CCCN Lung Cancer Pathway Activity Treatment Definition"
+Description: "CraNE Comprehensive Cancer Care Network Lung Cancer Pathway Activity Treatment Definition"
+Usage: #definition
+* insert Header
+
+* title = "Treatment / End-of-Life Care"
+
+// BPMN Activity: Therapy
+* action[+].id = "therapy"
+* action[=].title = "Therapy"
+* action[=].description = "Therapy/ Treatment Phase"
+* action[=].code = $SCT#7922000 "General treatment (procedure)"
+* action[=].groupingBehavior = #logical-group
+* action[=].selectionBehavior = #one-or-more
+* action[=].cardinalityBehavior = #multiple
+* action[=].documentation[+].type = #documentation
+* action[=].documentation[=].display = "In reference to national/ international lung cancer guidelines"
+* action[=].relatedAction[+].actionId = "supportive-palliative-care"
+* action[=].relatedAction[=].relationship = #concurrent
+* action[=].relatedAction[+].actionId = "rehabilitation"
+* action[=].relatedAction[=].relationship = #concurrent
+
+// BPMN Task: Therapy / Surgery
+* action[=].action[+].id = "surgery"
+* action[=].action[=].title = "Surgery"
+* action[=].action[=].description = "Surgery"
+* action[=].action[=].code = $SCT#387713003 "Surgical procedure (procedure)"
+
+// BPMN Task: Therapy / Radio (Chemo-) Therapy
+* action[=].action[+].id = "radio-chemo-therapy"
+* action[=].action[=].title = "Radio (Chemo-) Therapy"
+* action[=].action[=].description = "Radio (Chemo-) Therapy"
+* action[=].action[=].code = $SCT#703423002 "Combined chemotherapy and radiation therapy (procedure)"
+
+// BPMN Task: Therapy / Systemic Therapy
+* action[=].action[+].id = "systemic-therapy"
+* action[=].action[=].title = "Systemic Therapy"
+* action[=].action[=].description = "Systemic Therapy"
+* action[=].action[=].code = $SCT#367336001 "Chemotherapy (procedure)"
+* action[=].action[=].code = $SCT#76334006 "Immunotherapy (procedure)"
+* action[=].action[=].code = $SCT#169413002 "Hormone therapy (procedure)"
+* action[=].action[=].code = $SCT#416608005 "Drug therapy (procedure)"
+
+// BPMN Task: Therapy / Other Therapy
+* action[=].action[+].id = "other-therapy"
+* action[=].action[=].title = "Other Therapy"
+* action[=].action[=].description = "Other Therapy"
+* action[=].action[=].code = $SCT#243121000 "Medical therapy (procedure)"
+* action[=].action[=].code = $SCT#1259201000 "Adjuvant drug therapy (procedure)"
+* action[=].action[=].code = $SCT#385797002 "Adverse drug reaction prevention (procedure)"
+* action[=].action[=].code = $SCT#396081009 "Adverse drug reaction prevention management (procedure)"
+* action[=].action[=].documentation[+].type = #documentation
+* action[=].action[=].documentation[=].display = "E.g. in case of malignant pleural effusion, hemoptysis, superior vena cava syndrome, tracheobronchial tumour obstruction"
+* action[=].action[=].documentation[+].type = #documentation
+* action[=].action[=].documentation[=].display = "Specific treatment of metastases"
+
+// BPMN Task: Therapy / End-of-life care/ best supportive care
+* action[=].action[+].id = "eol-supportive-care"
+* action[=].action[=].title = "End-of-life Care/ Supportive Care"
+* action[=].action[=].description = "End-of-life Care/ Supportive Care"
+* action[=].action[=].code = $SCT#713058002 "End of life care planning (procedure)"
+* action[=].action[=].code = $SCT#362964009 "Palliative procedure (procedure)"
+
+// BPMN Task: Post-operative/ -therapeutic/ mid-therapeutic TB/MTB meeting
+* action[+].id = "therapy-evaluation"
+* action[=].title = "Post-operative/ -therapeutic/ mid-therapeutic TB/MTB Meeting"
+* action[=].description = "Post-operative/ -therapeutic/ mid-therapeutic (Molecular) Tumor Board Meeting"
+* action[=].code = $SCT#720006006 "Cancer care review (procedure)"
+* action[=].code = $SCT#425268008 "Review of care plan (procedure)"
+* action[=].condition.kind = #start
+* action[=].condition.expression.description = "Patient Undergone Surgery"
+* action[=].condition.expression.language = #text/cql
+* action[=].condition.expression.expression = "Performed Surgery"
+* action[=].condition.kind = #start
+* action[=].condition.expression.description = "Conduct Molecular Tumor Board Meeting"
+* action[=].condition.expression.language = #text/cql
+* action[=].condition.expression.expression = "Meets Molucular Tumor Board Inclusion Criteria"
+* action[=].documentation[+].type = #documentation
+* action[=].documentation[=].display = "Mandatory: post-opertive"
+* action[=].documentation[+].type = #documentation
+* action[=].documentation[=].display = "MTB if necessary (see inclusion criteria in subprocess for MTB meeting)"
+* action[=].documentation[+].type = #documentation
+* action[=].documentation[=].display = "If necessary including staging diagnostics"
+* action[=].relatedAction[+].actionId = "therapy"
+* action[=].relatedAction[=].relationship = #after-end
+
+// BPMN Task: Supportive Care / Early Integration of Palliative Care
+* action[+].id = "supportive-palliative-care"
+* action[=].title = "Supportive Care/ Early Integration of Palliative Care"
+* action[=].description = "Supportive Care/ Early Integration of Palliative Care"
+* action[=].code = $SCT#362964009 "Palliative procedure (procedure)"
+* action[=].documentation[+].type = #documentation
+* action[=].documentation[=].display = "In parallel to therapy"
+* action[=].documentation[+].type = #documentation
+* action[=].documentation[=].display = "Aim: maintain and improve quality of life, e.g. by pain management according to the WHO pain management scheme, psycho-oncological care"
+* action[=].relatedAction[+].actionId = "therapy"
+* action[=].relatedAction[=].relationship = #concurrent
+* action[=].relatedAction[+].actionId = "rehabilitation"
+* action[=].relatedAction[=].relationship = #concurrent
+
+// BPMN Task: Rehabilitation (optional)
+* action[+].id = "rehabilitation"
+* action[=].title = "Rehabilitation"
+* action[=].description = "Rehabilitation (optional)"
+* action[=].code = $SCT#709503007 "Assessment of quality of life (procedure)"
+* action[=].code = $SCT#410081009 "Rehabilitation therapy assessment (procedure)"
+* action[=].code = $SCT#410082002 "Rehabilitation therapy education (procedure)"
+* action[=].code = $SCT#410083007 "Rehabilitation therapy management (procedure)"
+* action[=].condition.kind = #applicability
+* action[=].condition.expression.description = "According to National Standards/ Conditions"
+* action[=].condition.expression.language = #text/cql
+* action[=].condition.expression.expression = "Apply National Standards"
+* action[=].relatedAction[+].actionId = "therapy"
+* action[=].relatedAction[=].relationship = #concurrent
+* action[=].relatedAction[+].actionId = "supportive-palliative-care"
+* action[=].relatedAction[=].relationship = #concurrent
