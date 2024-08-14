@@ -38,10 +38,14 @@ Usage: #definition
 * action[=].definitionCanonical = Canonical(crane-cccn-definition-activity-screening)
 
 // BPMN Group: CCCN Entry
+// TODO: Check loop implementation of "Follow-Up [Recurrence]" -> "Patient Consultation"
+// TODO: Eventually remove relatedAction.actionId = cccn-post-care
 * action[+].id = "cccn-entry"
 * action[=].title = "CCCN Entry"
 * action[=].description = "CCCN Entry"
 * action[=].code = #provide-counseling
+* action[=].relatedAction[+].actionId = "cccn-post-care"
+* action[=].relatedAction[=].relationship = #after-end
 * action[=].relatedAction[+].actionId = "cccn-pre-entry"
 * action[=].relatedAction[=].relationship = #after-end
 * action[=].relatedAction[+].actionId = "cccn-post-entry"
@@ -94,7 +98,8 @@ Usage: #definition
 * action[=].relatedAction[=].relationship = #after-end
 * action[=].relatedAction[+].actionId = "cccn-exit"
 * action[=].relatedAction[=].relationship = #before-start
-* action[=].selectionBehavior = #one-or-more
+* action[=].selectionBehavior = #all
+* action[=].definitionCanonical = Canonical(crane-cccn-definition-activity-follow-up)
 
 // BPMN Group: End of CCCN Care
 * action[+].id = "cccn-exit"
