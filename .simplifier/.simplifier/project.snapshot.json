@@ -62,9 +62,9 @@
       "Hash": "8B0D8F8D34440744ECC751D773D45661"
     },
     "package.json": {
-      "Length": 104,
-      "LastWriteTime": "2024-06-20T16:45:52+00:00",
-      "Hash": "A606472D97A4A4E9364D1464F6973093"
+      "Length": 145,
+      "LastWriteTime": "2024-08-06T10:20:05.3834312+00:00",
+      "Hash": "D5778FC6FFB7A5B0D759BD2E9A7C2A12"
     },
     "guides/crane-cccn-pw-ig/toc.yaml": {
       "Length": 32,
@@ -85,6 +85,301 @@
       "Length": 115,
       "LastWriteTime": "2024-07-23T12:44:00+00:00",
       "Hash": "CDD9B88B7526C2449BD6B7DFBDD3C1DD"
+    },
+    "fsh-generated/fsh-index.txt": {
+      "Length": 10434,
+      "LastWriteTime": "2024-08-19T19:34:45.2824142+00:00",
+      "Hash": "F87EF612BCFB9D338CF049863E360930"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-07.json": {
+      "Length": 1719,
+      "LastWriteTime": "2024-08-19T19:34:45.2289479+00:00",
+      "Hash": "DD48223C31AFC928E3BB12188C6C5ECA"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-11.json": {
+      "Length": 1747,
+      "LastWriteTime": "2024-08-19T19:34:45.2330293+00:00",
+      "Hash": "D9E2F3F06BA5701C6F7978B45556AF90"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-14.json": {
+      "Length": 3964,
+      "LastWriteTime": "2024-08-19T19:34:45.2394192+00:00",
+      "Hash": "457F4AAEDE3ED7FD703F31988954E0CC"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-02.json": {
+      "Length": 2876,
+      "LastWriteTime": "2024-08-19T19:34:45.224338+00:00",
+      "Hash": "25F75362C2508E57C35319793EEDEE45"
+    },
+    "fsh-generated/resources/StructureDefinition-crane-cccn-report-quality-indicator-definition.json": {
+      "Length": 2367,
+      "LastWriteTime": "2024-08-19T19:34:45.2088001+00:00",
+      "Hash": "F4DA1C02DADF68B96D8B76B73278CD4F"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-18.json": {
+      "Length": 2894,
+      "LastWriteTime": "2024-08-19T19:34:45.2429647+00:00",
+      "Hash": "D67FBED61B6383F4FFC4E84006430B61"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-19.json": {
+      "Length": 3928,
+      "LastWriteTime": "2024-08-19T19:34:45.2438535+00:00",
+      "Hash": "45650D6BB84EF71B6FB760C44303CFE5"
+    },
+    "fsh-generated/resources/PlanDefinition-crane-cccn-definition-pathway.json": {
+      "Length": 2431,
+      "LastWriteTime": "2024-08-19T19:34:45.2201161+00:00",
+      "Hash": "4399A37E43660F0A999AFF37B8AEF7B6"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-03.json": {
+      "Length": 3922,
+      "LastWriteTime": "2024-08-19T19:34:45.2255251+00:00",
+      "Hash": "8FA9DD8FA099E93758832404E2353B99"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-15.json": {
+      "Length": 3074,
+      "LastWriteTime": "2024-08-19T19:34:45.240351+00:00",
+      "Hash": "52DAF05AF6B857D17BF4E145E7E3E8A4"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-10.json": {
+      "Length": 1711,
+      "LastWriteTime": "2024-08-19T19:34:45.2322721+00:00",
+      "Hash": "ACF52AF346528F3109A6526B1116AD3F"
+    },
+    "fsh-generated/resources/PlanDefinition-crane-cccn-definition-activity-treatment-planning.json": {
+      "Length": 22399,
+      "LastWriteTime": "2024-08-19T19:34:45.2536482+00:00",
+      "Hash": "280D4835A9FCD799DC5D05D70A50B660"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-06.json": {
+      "Length": 1697,
+      "LastWriteTime": "2024-08-19T19:34:45.2280567+00:00",
+      "Hash": "BEC668ACF8107F76980FFE489E48A0C3"
+    },
+    "fsh-generated/resources/PlanDefinition-crane-cccn-definition-activity-follow-up.json": {
+      "Length": 4852,
+      "LastWriteTime": "2024-08-19T19:34:45.2196254+00:00",
+      "Hash": "A75DFF82BF8880EE1688F79FFCD1AA0B"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-08.json": {
+      "Length": 2940,
+      "LastWriteTime": "2024-08-19T19:34:45.2308856+00:00",
+      "Hash": "2DED4D4FF7EDF401917784FA11B83BBC"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-01.json": {
+      "Length": 1777,
+      "LastWriteTime": "2024-08-19T19:34:45.2223329+00:00",
+      "Hash": "95CBB619A3C0463966E89EDC5C23C4AE"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-17.json": {
+      "Length": 1702,
+      "LastWriteTime": "2024-08-19T19:34:45.241722+00:00",
+      "Hash": "582A715B2D66A3967FDCA0DB81BC3FA1"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-12.json": {
+      "Length": 2833,
+      "LastWriteTime": "2024-08-19T19:34:45.2370545+00:00",
+      "Hash": "970FC8B4B64A09E8D4DD94B798A8E785"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-04.json": {
+      "Length": 2952,
+      "LastWriteTime": "2024-08-19T19:34:45.226395+00:00",
+      "Hash": "1DB8EB85865FA6255B71C1EFC2658DEB"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-05.json": {
+      "Length": 2973,
+      "LastWriteTime": "2024-08-19T19:34:45.227634+00:00",
+      "Hash": "17D29EFF2E71C60C9734D7E8863D146D"
+    },
+    "fsh-generated/resources/PlanDefinition-crane-cccn-definition-activity-patient-consultation.json": {
+      "Length": 4545,
+      "LastWriteTime": "2024-08-19T19:34:45.2214727+00:00",
+      "Hash": "DD2A4B9AE3BAFCBB262A57C30E5AE9F3"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-13.json": {
+      "Length": 2801,
+      "LastWriteTime": "2024-08-19T19:34:45.2380083+00:00",
+      "Hash": "69719960E974866BC1191C64C745D0E0"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-16.json": {
+      "Length": 1736,
+      "LastWriteTime": "2024-08-19T19:34:45.2408498+00:00",
+      "Hash": "A543C314514DAB19020EB0798D11DCAC"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-20.json": {
+      "Length": 1729,
+      "LastWriteTime": "2024-08-19T19:34:45.2443723+00:00",
+      "Hash": "B3E75F684BF3E6498DCBD18111F330DE"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-09.json": {
+      "Length": 3938,
+      "LastWriteTime": "2024-08-19T19:34:45.2319498+00:00",
+      "Hash": "7DDB64AB047EB42235B3B275E9C298AB"
+    },
+    "fsh-generated/resources/PlanDefinition-crane-cccn-definition-process-flow.json": {
+      "Length": 6089,
+      "LastWriteTime": "2024-08-19T19:34:45.2209207+00:00",
+      "Hash": "1DB81B38A7B425106D16289D07758717"
+    },
+    "fsh-generated/resources/StructureDefinition-crane-cccn-report-quality-indicator-extension.json": {
+      "Length": 1480,
+      "LastWriteTime": "2024-08-19T19:34:45.2177362+00:00",
+      "Hash": "4F4B9ACD8D83EC86FCA7C34BD9E64B85"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-19.json": {
+      "Length": 1731,
+      "LastWriteTime": "2024-08-19T19:34:45.243299+00:00",
+      "Hash": "2D8E6C592BC4F0F30DFBC43AD9D85E72"
+    },
+    "fsh-generated/resources/StructureDefinition-crane-cccn-lung-cancer-pathway.json": {
+      "Length": 4980,
+      "LastWriteTime": "2024-08-19T19:34:45.0933663+00:00",
+      "Hash": "02D19008F667AF5E45FB6202842E2559"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-06.json": {
+      "Length": 3174,
+      "LastWriteTime": "2024-08-19T19:34:45.2284835+00:00",
+      "Hash": "2AC97AD87D54C35E2630F68E99E7BFC6"
+    },
+    "fsh-generated/resources/StructureDefinition-crane-cccn-lung-cancer-pathway-process-flow.json": {
+      "Length": 2627,
+      "LastWriteTime": "2024-08-19T19:34:45.1066765+00:00",
+      "Hash": "A7305000AFB2268356AAEAE8551127B9"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-10.json": {
+      "Length": 3943,
+      "LastWriteTime": "2024-08-19T19:34:45.2326756+00:00",
+      "Hash": "616A6FC221C5C0BCC17BC5285E54055B"
+    },
+    "fsh-generated/resources/PlanDefinition-crane-cccn-definition-activity-treatment.json": {
+      "Length": 9470,
+      "LastWriteTime": "2024-08-19T19:34:45.2525555+00:00",
+      "Hash": "AD14AE3E410A4669E7B83C2B987AD7BC"
+    },
+    "fsh-generated/resources/ImplementationGuide-fhir.crane-cccn-pw-ig.json": {
+      "Length": 18385,
+      "LastWriteTime": "2024-08-19T19:34:45.4009496+00:00",
+      "Hash": "3F02312D71C9DC0D75823EC63901F2D3"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-15.json": {
+      "Length": 1750,
+      "LastWriteTime": "2024-08-19T19:34:45.2397849+00:00",
+      "Hash": "4FFB865D8353F7BA9E9C20BF9FD3F75F"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-03.json": {
+      "Length": 1733,
+      "LastWriteTime": "2024-08-19T19:34:45.2247369+00:00",
+      "Hash": "6D166F896C2A779E1B39B2855D1ABE84"
+    },
+    "fsh-generated/resources/StructureDefinition-crane-cccn-report-quality-indicator-request.json": {
+      "Length": 2108,
+      "LastWriteTime": "2024-08-19T19:34:45.2166557+00:00",
+      "Hash": "7BCECE75A3EB71FF5F1F3905DAD88793"
+    },
+    "fsh-generated/resources/PlanDefinition-crane-cccn-definition-activity-end-of-care.json": {
+      "Length": 1925,
+      "LastWriteTime": "2024-08-19T19:34:45.2186865+00:00",
+      "Hash": "1380B3A3D7FF9C4EA6D671EA6E7432D7"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-02.json": {
+      "Length": 1713,
+      "LastWriteTime": "2024-08-19T19:34:45.223678+00:00",
+      "Hash": "F2FA5F3AD4105C09C42FEAB91DFEE098"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-14.json": {
+      "Length": 1734,
+      "LastWriteTime": "2024-08-19T19:34:45.2383799+00:00",
+      "Hash": "8A42099DC41C19E17526AA8521C043E4"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-11.json": {
+      "Length": 2963,
+      "LastWriteTime": "2024-08-19T19:34:45.2336228+00:00",
+      "Hash": "D5A6EB2EC7D95678FC2B4A726F5FB90B"
+    },
+    "fsh-generated/resources/PlanDefinition-crane-cccn-definition-activity-screening.json": {
+      "Length": 2826,
+      "LastWriteTime": "2024-08-19T19:34:45.249974+00:00",
+      "Hash": "C2FA015D3FEF3ECC9F9CF690E49B83FB"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-07.json": {
+      "Length": 2564,
+      "LastWriteTime": "2024-08-19T19:34:45.230034+00:00",
+      "Hash": "01A19AD0691FA375FE736C55C9906727"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-18.json": {
+      "Length": 1716,
+      "LastWriteTime": "2024-08-19T19:34:45.2425607+00:00",
+      "Hash": "98B3430953E27BAE03AD34AA12B6EAE4"
+    },
+    "fsh-generated/resources/StructureDefinition-crane-cccn-quality-indicator-definition.json": {
+      "Length": 2781,
+      "LastWriteTime": "2024-08-19T19:34:45.1997395+00:00",
+      "Hash": "A04E6F4A9E2D6E8425B8CF6BAE314546"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-16.json": {
+      "Length": 2550,
+      "LastWriteTime": "2024-08-19T19:34:45.2413631+00:00",
+      "Hash": "E62F8B339E66E249FD94CB57A5842349"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-13.json": {
+      "Length": 1728,
+      "LastWriteTime": "2024-08-19T19:34:45.2375757+00:00",
+      "Hash": "29F53D5F4694274ADBD9847CD052E133"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-05.json": {
+      "Length": 1715,
+      "LastWriteTime": "2024-08-19T19:34:45.2268146+00:00",
+      "Hash": "1FCF230BD3F0FCCF56BA69B81BB6306B"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-09.json": {
+      "Length": 1718,
+      "LastWriteTime": "2024-08-19T19:34:45.2315236+00:00",
+      "Hash": "500815C3625DEE6ABC4697163EEA17F7"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-20.json": {
+      "Length": 3878,
+      "LastWriteTime": "2024-08-19T19:34:45.2458107+00:00",
+      "Hash": "77F513B298D2CE6119663AA1D7BAC8F9"
+    },
+    "fsh-generated/resources/PlanDefinition-crane-cccn-definition-activity-staging-diagnostics.json": {
+      "Length": 8119,
+      "LastWriteTime": "2024-08-19T19:34:45.2516376+00:00",
+      "Hash": "8853503D9A869E79C96CE81B0EFCABDB"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-08.json": {
+      "Length": 1749,
+      "LastWriteTime": "2024-08-19T19:34:45.230427+00:00",
+      "Hash": "614BA0E6A6AD01CB303784E74EC3138D"
+    },
+    "fsh-generated/resources/StructureDefinition-crane-cccn-lung-cancer-pathway-activity.json": {
+      "Length": 14970,
+      "LastWriteTime": "2024-08-19T19:34:45.1911436+00:00",
+      "Hash": "60CC7320C4B523D558DC8AA4C3904C4C"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-04.json": {
+      "Length": 1696,
+      "LastWriteTime": "2024-08-19T19:34:45.2259207+00:00",
+      "Hash": "1AE704155132C013AC45962E7B82FAE1"
+    },
+    "fsh-generated/resources/ActivityDefinition-crane-cccn-report-quality-indicator-12.json": {
+      "Length": 1732,
+      "LastWriteTime": "2024-08-19T19:34:45.2361019+00:00",
+      "Hash": "0CBBE099B37F97690928CA8C440196E0"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-17.json": {
+      "Length": 3818,
+      "LastWriteTime": "2024-08-19T19:34:45.2421852+00:00",
+      "Hash": "3BCFA38C920007EB693FEDEE2F7EB38C"
+    },
+    "fsh-generated/resources/Measure-crane-cccn-quality-indicator-01.json": {
+      "Length": 2916,
+      "LastWriteTime": "2024-08-19T19:34:45.2232334+00:00",
+      "Hash": "DBB2E8FD2B4F648CE095F8211D870470"
+    },
+    "fsh-generated/includes/fsh-link-references.md": {
+      "Length": 5454,
+      "LastWriteTime": "2024-08-19T19:34:45.3947222+00:00",
+      "Hash": "B0EEAC2565E67F237AF5A1332B7DEC35"
     }
   }
 }
