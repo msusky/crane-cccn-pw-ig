@@ -12,6 +12,8 @@ Usage: #definition
 * action[+].title = "Patient Consultation"
 * action[=].description = "Patient Consultation"
 * action[=].code = $SCT#1237136005 "Consultation with patient (procedure)"
+* action[=].trigger.type = #named-event
+* action[=].trigger.name = "Patient Consultation Appointment"
 * action[=].condition[+].kind = #start
 * action[=].condition[=].expression.description = "Patient with Symptoms OR Patient with Histologically Confirmed Lung Cancer OR Citizen with Positive Lung Cancer Screening Results"
 * action[=].condition[=].expression.language = #text/cql
@@ -25,7 +27,7 @@ Usage: #definition
 // BPMN Task: Patient Consultation / Medical History
 // TODO: Find more appropriate title and description, e.g. Personal History Assessment
 * action[=].action[+].title = "Medical History"
-* action[=].action[=].description = "Medical History, Familiy History, Social History, Smoking Status (Survey of Current Status)"
+* action[=].action[=].description = "Medical History, Familiy History, Social History, Smoking Status (Survey of Current Status), Occupational Exposure"
 * action[=].action[=].code = $SCT#225886003 "Medical assessment (procedure)"
 * action[=].action[=].code = $SCT#410551005 "Family history taking (procedure)"
 * action[=].action[=].code = $SCT#406551008 "Social assessment (procedure)"
@@ -34,7 +36,7 @@ Usage: #definition
 // BPMN Task: Patient Consultation / General Diagnostics
 // TODO: Find more appropriate title and description, e.g. Physical Assessment
 * action[=].action[+].title = "General Diagnostics"
-* action[=].action[=].description = "Physical Examination, Assessing Comorbidities, Performance Status Assessment"
+* action[=].action[=].description = "Physical Examination, Assessing Comorbidities, Performance Status Assessment (ECOG, Karnofsky Performance Status Scale)"
 // TODO: * action[=].action[=].code = $SCT#5880005 "Physical examination procedure (procedure)"
 // TODO: * action[=].action[=].code = $SCT#81375008 "Physical assessment (procedure)"
 * action[=].action[=].code = $SCT#410182004 "Physical examination assessment (procedure)"
@@ -53,7 +55,7 @@ Usage: #definition
 // TODO: Find more appropriate title and description, e.g. Laboratory Testing
 // NOTE: https://www.cancer.org/cancer/types/bone-cancer/detection-diagnosis-staging/how-diagnosed.html
 * action[=].action[+].title = "Laboratory"
-* action[=].action[=].description = "Blood Cell Count, Renal Function, Liver Enzymes, Bone Parameters, LDH, NSE"
+* action[=].action[=].description = "Blood Cell Counts, Renal Function, Liver Enzymes, Bone Parameters, LDH, NSE"
 * action[=].action[=].code = $SCT#15220000 "Laboratory test (procedure)"
 // NOTE: https://www.ncbi.nlm.nih.gov/books/NBK507821/
 * action[=].action[=].code = $SCT#88308000 "Blood cell count (procedure)"

@@ -20,7 +20,7 @@ Usage: #definition
 * action[=].condition.expression.language = #text/cql
 * action[=].condition.expression.expression = "Is Imaging Requested"
 * action[=].groupingBehavior = #logical-group
-* action[=].selectionBehavior = #any
+* action[=].selectionBehavior = #all
 * action[=].relatedAction.actionId = "cccn-discharge"
 * action[=].relatedAction.relationship = #before-start
 * action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-06)
@@ -37,6 +37,8 @@ Usage: #definition
 * action[=].action[=].code = $SCT#241601008 "Magnetic resonance imaging of head (procedure)"
 * action[=].action[=].relatedAction.actionId = "tumor-staging"
 * action[=].action[=].relatedAction.relationship = #before-start
+* action[=].action[=].relatedAction.actionId = "diagnosis-assurance"
+* action[=].action[=].relatedAction.relationship = #concurrent-with-start
 
 // BPMN Activity: Staging Diagnostics / Diagnosis Assurance
 * action[=].action[+].id = "diagnosis-assurance"
@@ -45,6 +47,8 @@ Usage: #definition
 * action[=].action[=].code = $SCT#165197003 "Diagnostic assessment (procedure)"
 * action[=].action[=].relatedAction.actionId = "pathology"
 * action[=].action[=].relatedAction.relationship = #before-start
+* action[=].action[=].relatedAction.actionId = "imaging"
+* action[=].action[=].relatedAction.relationship = #concurrent-with-start
 * action[=].action[=].groupingBehavior = #logical-group
 * action[=].action[=].selectionBehavior = #any
 
@@ -79,7 +83,7 @@ Usage: #definition
 // BPMN Task: Staging Diagnostics / Pathology, Molecular Pathology
 * action[=].action[+].id = "pathology"
 * action[=].action[=].title = "Pathology / Molecular Pathology"
-* action[=].action[=].description = "Pathology / Molecular Pathology"
+* action[=].action[=].description = "According to guideline recommendations; If needed liquid biopsy"
 * action[=].action[=].code = $SCT#168456004 "Gross pathology request (procedure)"
 * action[=].action[=].code = $SCT#275640004 "Refer to pathology laboratory (procedure)"
 * action[=].action[=].code = $SCT#708179009 "Molecular pathology service (qualifier value)"

@@ -5,12 +5,12 @@ Description: "CraNE Comprehensive Cancer Care Network Lung Cancer Pathway Activi
 Usage: #definition
 * insert Header
 
-* title = "Treatment / End-of-Life Care"
+* title = "Treatment"
 
 // BPMN Activity: Therapy
-* action[+].id = "therapy"
-* action[=].title = "Therapy"
-* action[=].description = "Therapy/ Treatment Phase"
+* action[+].id = "treatment"
+* action[=].title = "Treatment"
+* action[=].description = "Treatment / Treatment Phase"
 * action[=].code = $SCT#7922000 "General treatment (procedure)"
 * action[=].groupingBehavior = #logical-group
 * action[=].selectionBehavior = #one-or-more
@@ -18,9 +18,9 @@ Usage: #definition
 * action[=].documentation[+].type = #documentation
 * action[=].documentation[=].display = "In reference to national/ international lung cancer guidelines"
 * action[=].relatedAction[+].actionId = "supportive-palliative-care"
-* action[=].relatedAction[=].relationship = #concurrent
+* action[=].relatedAction[=].relationship = #concurrent-with-start
 * action[=].relatedAction[+].actionId = "rehabilitation"
-* action[=].relatedAction[=].relationship = #concurrent
+* action[=].relatedAction[=].relationship = #concurrent-with-start
 
 // BPMN Task: Therapy / Surgery
 * action[=].action[+].id = "surgery"
@@ -99,7 +99,7 @@ Usage: #definition
 * action[=].documentation[=].display = "MTB if necessary (see inclusion criteria in subprocess for MTB meeting)"
 * action[=].documentation[+].type = #documentation
 * action[=].documentation[=].display = "If necessary including staging diagnostics"
-* action[=].relatedAction[+].actionId = "therapy"
+* action[=].relatedAction[+].actionId = "treatment"
 * action[=].relatedAction[=].relationship = #after-end
 * action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-01)
 
@@ -112,7 +112,7 @@ Usage: #definition
 * action[=].documentation[=].display = "In parallel to therapy"
 * action[=].documentation[+].type = #documentation
 * action[=].documentation[=].display = "Aim: maintain and improve quality of life, e.g. by pain management according to the WHO pain management scheme, psycho-oncological care"
-* action[=].relatedAction[+].actionId = "therapy"
+* action[=].relatedAction[+].actionId = "treatment"
 * action[=].relatedAction[=].relationship = #concurrent
 * action[=].relatedAction[+].actionId = "rehabilitation"
 * action[=].relatedAction[=].relationship = #concurrent
@@ -130,7 +130,7 @@ Usage: #definition
 * action[=].condition.expression.description = "According to National Standards/ Conditions"
 * action[=].condition.expression.language = #text/cql
 * action[=].condition.expression.expression = "Apply National Standards"
-* action[=].relatedAction[+].actionId = "therapy"
+* action[=].relatedAction[+].actionId = "treatment"
 * action[=].relatedAction[=].relationship = #concurrent
 * action[=].relatedAction[+].actionId = "supportive-palliative-care"
 * action[=].relatedAction[=].relationship = #concurrent

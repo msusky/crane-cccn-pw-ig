@@ -34,7 +34,7 @@ Usage: #definition
 * action[=].code = #determine-diagnosis
 * action[=].relatedAction.actionId = "cccn-entry"
 * action[=].relatedAction.relationship = #before-start
-* action[=].selectionBehavior = #any
+* action[=].selectionBehavior = #all
 * action[=].definitionCanonical = Canonical(crane-cccn-definition-activity-screening)
 
 // BPMN Group: CCCN Entry
@@ -77,9 +77,9 @@ Usage: #definition
 * action[=].selectionBehavior = #all
 * action[=].definitionCanonical = Canonical(crane-cccn-definition-activity-treatment-planning)
 
-// BPMN Group: Treatmen / End-of-life Caret
+// BPMN Group: Treatment
 * action[+].id = "cccn-care"
-* action[=].title = "Treatment / End-of-life Care"
+* action[=].title = "Treatment"
 * action[=].description = "Treatment / End-of-life Care"
 * action[=].code = #guideline-based-care
 * action[=].relatedAction[+].actionId = "cccn-pre-care"
@@ -89,10 +89,10 @@ Usage: #definition
 * action[=].selectionBehavior = #all
 * action[=].definitionCanonical = Canonical(crane-cccn-definition-activity-treatment)
 
-// BPMN Group: Follow-Up
+// BPMN Group: Follow-Up / End-of-life Care
 * action[+].id = "cccn-post-care"
-* action[=].title = "Follow-Up"
-* action[=].description = "Follow-Up"
+* action[=].title = "Follow-Up / End-of-life Care"
+* action[=].description = "Follow-Up / End-of-life Care"
 * action[=].code = #monitor-and-follow-up-of-patient
 * action[=].relatedAction[+].actionId = "cccn-care"
 * action[=].relatedAction[=].relationship = #after-end

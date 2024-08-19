@@ -225,37 +225,38 @@ Usage: #definition
 
 // BPMN Task: Individual Reflection / Discussions, Second Opinion
 // TODO: Info Material, TB/MTB Report/ Recommendation Input
-* action[+].id = "patient-decision-making"
-* action[=].title = "Individual Reflection / Discussion, Second Opinion"
-* action[=].description = "Individual Reflection and Discussions, Second Opinion"
-* action[=].code = $SCT#77406008 "Confirmatory medical consultation (procedure)"
-* action[=].code = $SCT#223485006 "Discussion about therapy (procedure)"
-* action[=].code = $SCT#223484005 "Discussion about treatment (procedure)"
-* action[=].code = $SCT#223487003 "Discussion about options (procedure)"
-* action[=].condition.kind = #applicability
-* action[=].condition.expression.description = "Instant Patient Decision? [No]"
-* action[=].condition.expression.language = #text/cql
-* action[=].condition.expression.expression = "Postponement Patient Decision Making"
-* action[=].relatedAction[+].actionId = "patient-consultation-after-diagnosis"
-* action[=].relatedAction[=].relationship = #after-end
-* action[=].relatedAction[+].actionId = "shared-decision-making"
-* action[=].relatedAction[=].relationship = #before
+//* action[+].id = "patient-decision-making"
+//* action[=].title = "Individual Reflection / Discussion, Second Opinion"
+//* action[=].description = "Individual Reflection and Discussions, Second Opinion"
+//* action[=].code = $SCT#77406008 "Confirmatory medical consultation (procedure)"
+//* action[=].code = $SCT#223485006 "Discussion about therapy (procedure)"
+//* action[=].code = $SCT#223484005 "Discussion about treatment (procedure)"
+//* action[=].code = $SCT#223487003 "Discussion about options (procedure)"
+//* action[=].condition.kind = #applicability
+//* action[=].condition.expression.description = "Instant Patient Decision? [No]"
+//* action[=].condition.expression.language = #text/cql
+//* action[=].condition.expression.expression = "Postponement Patient Decision Making"
+//* action[=].relatedAction[+].actionId = "patient-consultation-after-diagnosis"
+//* action[=].relatedAction[=].relationship = #after-end
+//* action[=].relatedAction[+].actionId = "shared-decision-making"
+//* action[=].relatedAction[=].relationship = #before
 
 // BPMN Task: Shared Decision-Making
 // TODO: Treatment Plan Output
 * action[+].id = "shared-decision-making"
 * action[=].title = "Shared Decision Making"
 * action[=].description = "Shared Decision Making"
+* action[=].code = $SCT#77406008 "Confirmatory medical consultation (procedure)"
 * action[=].code = $SCT#223485006 "Discussion about therapy (procedure)"
 * action[=].code = $SCT#223484005 "Discussion about treatment (procedure)"
 * action[=].code = $SCT#223487003 "Discussion about options (procedure)"
 * action[=].code = $SCT#707737009 "Discussion about priorities for care (procedure)"
-* action[=].condition.kind = #start
-* action[=].condition.expression.description = "Instant Patient Decision? [Yes]"
-* action[=].condition.expression.language = #text/cql
-* action[=].condition.expression.expression = "Instant Patient Decision Making"
-* action[=].relatedAction[+].actionId = "patient-decision-making"
-* action[=].relatedAction[=].relationship = #after
+//* action[=].condition.kind = #start
+//* action[=].condition.expression.description = "Instant Patient Decision? [Yes]"
+//* action[=].condition.expression.language = #text/cql
+//* action[=].condition.expression.expression = "Instant Patient Decision Making"
+//* action[=].relatedAction[+].actionId = "patient-decision-making"
+//* action[=].relatedAction[=].relationship = #after
 * action[=].relatedAction[+].actionId = "patient-consultation-after-diagnosis"
 * action[=].relatedAction[=].relationship = #after-end
 
