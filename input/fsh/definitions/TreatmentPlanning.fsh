@@ -19,6 +19,8 @@ Usage: #definition
 * action[=].selectionBehavior = #all
 * action[=].relatedAction.actionId = "staging-diagnostics"
 * action[=].relatedAction.relationship = #after-end
+* action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-02)
+* action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-18)
 
 // BPMN Task: Standard Tumorboard (TB) Meeting / Registration of Patient for Tumorboard Meeting
 // TODO: Patient and Diagnostics Data Input
@@ -97,6 +99,8 @@ Usage: #definition
 * action[=].selectionBehavior = #all
 * action[=].relatedAction.actionId = "tumor-conference"
 * action[=].relatedAction.relationship = #after-end
+* action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-02)
+* action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-18)
 
 // BPMN Task: Molecular Tumorboard (MTB) Meeting / Registration of Patient for Molecular Tumorboard Meeting
 * action[=].action[+].id = "molecular-tumor-conference-registration"

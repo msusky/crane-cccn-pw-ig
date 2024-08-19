@@ -23,6 +23,7 @@ Usage: #definition
 * action[=].selectionBehavior = #any
 * action[=].relatedAction.actionId = "cccn-discharge"
 * action[=].relatedAction.relationship = #before-start
+* action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-06)
 
 // BPMN Task: Staging Diagnostics / Imaging
 * action[=].action[+].id = "imaging"
@@ -52,6 +53,7 @@ Usage: #definition
 * action[=].action[=].action[=].title = "Bronchoscopy"
 * action[=].action[=].action[=].description = "Bronchoscopy"
 * action[=].action[=].action[=].code = $SCT#55198006 "Bronchoscopy with biopsy (procedure)"
+* action[=].action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-16)
 
 // BPMN Task: Staging Diagnostics / Diagnosis Assurance / Mediastinal Staging
 // NOTE: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4128458/
@@ -85,6 +87,8 @@ Usage: #definition
 * action[=].action[=].relatedAction.relationship = #after-end
 * action[=].action[=].relatedAction.actionId = "tumor-staging"
 * action[=].action[=].relatedAction.relationship = #before-start
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-04)
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-05)
 // TODO: Pathology Report Result Output
 
 // BPMN Task: Staging Diagnostics / cTNM Classification and Staging

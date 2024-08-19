@@ -90,3 +90,31 @@ Description: "The profile for the CraNE Comprehensive Cancer Care Network Lung C
 * action.code contains SCT 0..* MS
 * action.code[SCT].coding.system = $SCT
 * action.code[SCT].coding.code 1..1 MS
+* insert ReportQualityIndicator
+
+// TODO: Find better way to slice indefinit (recursion of) sub-actions of PlanDefinition.action (activity)
+// NOTE: Circular dependencies using RuleSet is prohibited (will be ignored), hence five levels are pre-defined
+RuleSet: ReportQualityIndicator
+* action
+  * insert ReportQualityIndicatorAction
+  * action
+    * insert ReportQualityIndicatorAction
+    * action
+      * insert ReportQualityIndicatorAction
+      * action
+        * insert ReportQualityIndicatorAction
+        * action
+          * insert ReportQualityIndicatorAction
+
+RuleSet: ReportQualityIndicatorAction
+* action ^slicing.discriminator.type = #value
+* action ^slicing.discriminator.path = "action.definition[x]"
+* action ^slicing.rules = #open
+* action ^slicing.description = "Slice of action to define quality indicators to be reported for this activity"
+* action ^slicing.ordered = false
+* action contains ReportQualityIndicator 0..* MS
+* action[ReportQualityIndicator].title = "Report Quality Indicator"
+* action[ReportQualityIndicator].description = "Definition of a quality indicator for the surrounding (parent) action"
+* action[ReportQualityIndicator].type = #create
+* action[ReportQualityIndicator].definition[x] 1..1 MS
+* action[ReportQualityIndicator].definition[x] only Canonical(CraNE_CCCN_Report_Quality_Indicator_Definition)

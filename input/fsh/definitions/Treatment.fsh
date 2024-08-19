@@ -27,12 +27,25 @@ Usage: #definition
 * action[=].action[=].title = "Surgery"
 * action[=].action[=].description = "Surgery"
 * action[=].action[=].code = $SCT#387713003 "Surgical procedure (procedure)"
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-04)
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-05)
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-07)
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-08)
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-09)
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-10)
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-11)
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-12)
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-19)
 
 // BPMN Task: Therapy / Radio (Chemo-) Therapy
 * action[=].action[+].id = "radio-chemo-therapy"
 * action[=].action[=].title = "Radio (Chemo-) Therapy"
 * action[=].action[=].description = "Radio (Chemo-) Therapy"
 * action[=].action[=].code = $SCT#703423002 "Combined chemotherapy and radiation therapy (procedure)"
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-03)
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-13)
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-15)
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-20)
 
 // BPMN Task: Therapy / Systemic Therapy
 * action[=].action[+].id = "systemic-therapy"
@@ -42,6 +55,8 @@ Usage: #definition
 * action[=].action[=].code = $SCT#76334006 "Immunotherapy (procedure)"
 * action[=].action[=].code = $SCT#169413002 "Hormone therapy (procedure)"
 * action[=].action[=].code = $SCT#416608005 "Drug therapy (procedure)"
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-14)
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-17)
 
 // BPMN Task: Therapy / Other Therapy
 * action[=].action[+].id = "other-therapy"
@@ -55,6 +70,7 @@ Usage: #definition
 * action[=].action[=].documentation[=].display = "E.g. in case of malignant pleural effusion, hemoptysis, superior vena cava syndrome, tracheobronchial tumour obstruction"
 * action[=].action[=].documentation[+].type = #documentation
 * action[=].action[=].documentation[=].display = "Specific treatment of metastases"
+* action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-16)
 
 // BPMN Task: Therapy / End-of-life care/ best supportive care
 * action[=].action[+].id = "eol-supportive-care"
@@ -85,6 +101,7 @@ Usage: #definition
 * action[=].documentation[=].display = "If necessary including staging diagnostics"
 * action[=].relatedAction[+].actionId = "therapy"
 * action[=].relatedAction[=].relationship = #after-end
+* action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-01)
 
 // BPMN Task: Supportive Care / Early Integration of Palliative Care
 * action[+].id = "supportive-palliative-care"
@@ -99,6 +116,7 @@ Usage: #definition
 * action[=].relatedAction[=].relationship = #concurrent
 * action[=].relatedAction[+].actionId = "rehabilitation"
 * action[=].relatedAction[=].relationship = #concurrent
+* action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-18)
 
 // BPMN Task: Rehabilitation (optional)
 * action[+].id = "rehabilitation"
