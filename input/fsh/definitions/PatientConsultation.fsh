@@ -1,8 +1,8 @@
 // TODO: Clarify request for procedure or discussion of results/ findings
 Instance: crane-cccn-definition-activity-patient-consultation
-InstanceOf: CraNE_CCCN_Lung_Cancer_Pathway_Activity
-Title: "CraNE CCCN Lung Cancer Pathway Activity Patient Consultation Definition"
-Description: "CraNE Comprehensive Cancer Care Network Lung Cancer Pathway Activity Patient Consultation Definition"
+InstanceOf: CraNE_CCCN_Pathway_Activity
+Title: "CraNE CCCN Pathway Activity Patient Consultation Definition"
+Description: "CraNE Comprehensive Cancer Care Network Pathway Activity Patient Consultation Definition"
 Usage: #definition
 * insert Header
 

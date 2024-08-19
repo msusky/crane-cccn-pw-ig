@@ -1,9 +1,9 @@
 // NOTE: Represents a pathway with all it alternatives, strategies and options, if available
-Profile: CraNE_CCCN_Lung_Cancer_Pathway
+Profile: CraNE_CCCN_Pathway
 Parent: cpg-computableplandefinition
-Id: crane-cccn-lung-cancer-pathway
-Title: "CraNE CCCN Lung Cancer Pathway"
-Description: "The profile for the CraNE Comprehensive Cancer Care Network Lung Cancer Pathway"
+Id: crane-cccn-pathway
+Title: "CraNE CCCN Pathway"
+Description: "The profile for the CraNE Comprehensive Cancer Care Network Pathway"
 * insert HeaderProfile
 
 * title MS
@@ -32,15 +32,15 @@ Description: "The profile for the CraNE Comprehensive Cancer Care Network Lung C
 * goal.addresses.coding[ICD10].code 1..1 MS
 
 * action 1..1 MS
-* action.definition[x] only Canonical(CraNE_CCCN_Lung_Cancer_Pathway_Process_Flow)
+* action.definition[x] only Canonical(CraNE_CCCN_Pathway_Process_Flow)
 * action.action 0..0
 
 // NOTE: Represents a recommended pathway strategy
-Profile: CraNE_CCCN_Lung_Cancer_Pathway_Process_Flow
+Profile: CraNE_CCCN_Pathway_Process_Flow
 Parent: cpg-strategydefinition
-Id: crane-cccn-lung-cancer-pathway-process-flow
-Title: "CraNE CCCN Lung Cancer Pathway Process Flow"
-Description: "The profile for the CraNE Comprehensive Cancer Care Network Lung Cancer Pathway Process Flow"
+Id: crane-cccn-pathway-process-flow
+Title: "CraNE CCCN Pathway Process Flow"
+Description: "The profile for the CraNE Comprehensive Cancer Care Network Pathway Process Flow"
 * insert HeaderProfile
 
 * title MS
@@ -52,19 +52,19 @@ Description: "The profile for the CraNE Comprehensive Cancer Care Network Lung C
 * action.code MS
 * action.relatedAction 1..* MS
 * action.selectionBehavior 1..1 MS
-* action.definition[x] only Canonical(CraNE_CCCN_Lung_Cancer_Pathway_Process_Flow or CraNE_CCCN_Lung_Cancer_Pathway_Activity)
+* action.definition[x] only Canonical(CraNE_CCCN_Pathway_Process_Flow or CraNE_CCCN_Pathway_Activity)
 
 // NOTE: Actual performed activities or tasks
 * action.action MS
 // TODO: Check how to implement profile constraints
-//* action.action only Canonical(CraNE_CCCN_Lung_Cancer_Pathway_Process_Flow or CraNE_CCCN_Lung_Cancer_Pathway_Activity)
+//* action.action only Canonical(CraNE_CCCN_Pathway_Process_Flow or CraNE_CCCN_Pathway_Activity)
 
 // NOTE: Represents a compound or atomic pathway activity
-Profile: CraNE_CCCN_Lung_Cancer_Pathway_Activity
+Profile: CraNE_CCCN_Pathway_Activity
 Parent: cpg-recommendationdefinition
-Id: crane-cccn-lung-cancer-pathway-activity
-Title: "CraNE CCCN Lung Cancer Pathway Activity"
-Description: "The profile for the CraNE Comprehensive Cancer Care Network Lung Cancer Pathway Activity"
+Id: crane-cccn-pathway-activity
+Title: "CraNE CCCN Pathway Activity"
+Description: "The profile for the CraNE Comprehensive Cancer Care Network Pathway Activity"
 * insert HeaderProfile
 
 * title MS

@@ -1,7 +1,7 @@
 Instance: crane-cccn-definition-activity-follow-up
-InstanceOf: CraNE_CCCN_Lung_Cancer_Pathway_Activity
-Title: "CraNE CCCN Lung Cancer Pathway Activity Follow-Up Definition"
-Description: "CraNE Comprehensive Cancer Care Network Lung Cancer Pathway Activity Follow-Up Definition"
+InstanceOf: CraNE_CCCN_Pathway_Activity
+Title: "CraNE CCCN Pathway Activity Follow-Up Definition"
+Description: "CraNE Comprehensive Cancer Care Network Pathway Activity Follow-Up Definition"
 Usage: #definition
 * insert Header
 

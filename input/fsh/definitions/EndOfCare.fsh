@@ -1,7 +1,7 @@
 Instance: crane-cccn-definition-activity-end-of-care
-InstanceOf: CraNE_CCCN_Lung_Cancer_Pathway_Activity
-Title: "CraNE CCCN Lung Cancer Pathway Activity End-Of-Care Definition"
-Description: "CraNE Comprehensive Cancer Care Network Lung Cancer Pathway Activity End-Of-Care Definition"
+InstanceOf: CraNE_CCCN_Pathway_Activity
+Title: "CraNE CCCN Pathway Activity End-Of-Care Definition"
+Description: "CraNE Comprehensive Cancer Care Network Pathway Activity End-Of-Care Definition"
 Usage: #definition
 * insert Header
 

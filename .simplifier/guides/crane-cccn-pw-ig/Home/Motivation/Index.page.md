@@ -1,8 +1,8 @@
 <style>
     html, body, header, nav, table * {
-        font-family: "Work Sans", sans-serif;
-        font-size: 100%;
-        line-height: 2em;
+        font-family: "Work Sans", sans-serif !important;
+        font-size: 100% !important;
+        line-height: 2em !important;
     }
 
     body,
@@ -68,7 +68,7 @@
         height: 3em;
         line-height: 3em;
         text-align: center;
-        background-color: #da4453;
+        background-color: #da4453 !important;
     }
 
     .under-construction span {

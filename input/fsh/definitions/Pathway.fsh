@@ -1,8 +1,8 @@
-// NOTE: Represents the CraNE CCCN lung cancer pathway with no alternatives, strategies or options
+// NOTE: Represents the CraNE CCCN pathway with no alternatives, strategies or options
 Instance: crane-cccn-definition-pathway
-InstanceOf: CraNE_CCCN_Lung_Cancer_Pathway
-Title: "CraNE CCCN Lung Cancer Pathway Definition"
-Description: "CraNE Comprehensive Cancer Care Network Lung Cancer Pathway Definition"
+InstanceOf: CraNE_CCCN_Pathway
+Title: "CraNE CCCN Pathway Definition"
+Description: "CraNE Comprehensive Cancer Care Network Pathway Definition"
 Usage: #definition
 * insert Header
 // NOTE: Pathway with single strategy
@@ -19,11 +19,11 @@ Usage: #definition
 * action.code = #guideline-based-treatment
 * action.definitionCanonical = Canonical(crane-cccn-definition-process-flow)
 
-// NOTE: Represents the CraNE CCCN lung cancer pathway process flow
+// NOTE: Represents the CraNE CCCN pathway process flow
 Instance: crane-cccn-definition-process-flow
-InstanceOf: CraNE_CCCN_Lung_Cancer_Pathway_Process_Flow
-Title: "CraNE CCCN Lung Cancer Pathway Process Flow Definition"
-Description: "CraNE Comprehensive Cancer Care Network Lung Cancer Pathway Process Flow Definition"
+InstanceOf: CraNE_CCCN_Pathway_Process_Flow
+Title: "CraNE CCCN Pathway Process Flow Definition"
+Description: "CraNE Comprehensive Cancer Care Network Pathway Process Flow Definition"
 Usage: #definition
 * insert Header
 

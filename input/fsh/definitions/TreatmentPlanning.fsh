@@ -1,7 +1,7 @@
 Instance: crane-cccn-definition-activity-treatment-planning
-InstanceOf: CraNE_CCCN_Lung_Cancer_Pathway_Activity
-Title: "CraNE CCCN Lung Cancer Pathway Activity Treatment Planning Definition"
-Description: "CraNE Comprehensive Cancer Care Network Lung Cancer Pathway Activity Treatment Planning Definition"
+InstanceOf: CraNE_CCCN_Pathway_Activity
+Title: "CraNE CCCN Pathway Activity Treatment Planning Definition"
+Description: "CraNE Comprehensive Cancer Care Network Pathway Activity Treatment Planning Definition"
 Usage: #definition
 * insert Header
 
