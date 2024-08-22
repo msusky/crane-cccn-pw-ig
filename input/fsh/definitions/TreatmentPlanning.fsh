@@ -19,6 +19,11 @@ Usage: #definition
 * action[=].selectionBehavior = #all
 * action[=].relatedAction.actionId = "staging-diagnostics"
 * action[=].relatedAction.relationship = #after-end
+// NOTE: TB protocol with therapy recommendation
+* action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#74156-1 // Oncology treatment plan and summary Document
+* action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
+* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
+* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
 * action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-02)
 * action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-18)
 
@@ -53,7 +58,6 @@ Usage: #definition
 * action[=].action[=].relatedAction[=].relationship = #after-end
 
 // BPMN Task: Standard Tumorboard (TB) Meeting / Presentation in Tumorboard Meeting
-// TODO: Tumorboard protocol with therapy recommendation Output
 // TODO: Participants/ roles as PlanDefinition.action.documentation.resource:Reference(CareTeam)
 * action[=].action[+].id = "tumor-conference-presentation"
 * action[=].action[=].title = "Presentation"
@@ -74,9 +78,13 @@ Usage: #definition
 * action[=].action[=].condition.kind = #start
 * action[=].action[=].relatedAction.actionId = "tumor-conference-preparation"
 * action[=].action[=].relatedAction.relationship = #after-end
+// NOTE: TB protocol with therapy recommendation
+* action[=].action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#74156-1 // Oncology treatment plan and summary Document
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
 
 // BPMN Activity: Molecular Tumorboard (MTB) Meeting
-// TODO: MTB Report/ Recommendation Output
 * action[+].id = "molecular-tumor-conference"
 * action[=].title = "Molecular Tumorboard Meeting"
 * action[=].description = "Molecular Tumorboard (MTB) Meeting"
@@ -99,6 +107,11 @@ Usage: #definition
 * action[=].selectionBehavior = #all
 * action[=].relatedAction.actionId = "tumor-conference"
 * action[=].relatedAction.relationship = #after-end
+// NOTE: MTB protocol with therapy recommendation
+* action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#74156-1 // Oncology treatment plan and summary Document
+* action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
+* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
+* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
 * action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-02)
 * action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-18)
 
@@ -189,7 +202,6 @@ Usage: #definition
 
 // BPMN Task: Molecular Tumorboard (MTB) Meeting / (2nd) Presentation in Molecular Tumorboard
 // TODO: Participants/ roles as PlanDefinition.action.documentation.resource:Reference(CareTeam)
-// TODO: MTB protocol with therapy recommendation Output
 * action[=].action[+].id = "molecular-tumor-conference-presentation"
 * action[=].action[=].title = "(2nd) Presentation"
 * action[=].action[=].description = "(2nd) Presentation in Molecular Tumorboard"
@@ -200,6 +212,11 @@ Usage: #definition
 * action[=].action[=].documentation[=].display = "Participants: pathologist, human genetics, haematology/ oncology specialist, tumor-specific diciplines (tumor entity expert)"
 * action[=].action[=].relatedAction.actionId = "molecular-diagnostics"
 * action[=].action[=].relatedAction.relationship = #after-end
+// NOTE: MTB protocol with therapy recommendation
+* action[=].action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#74156-1 // Oncology treatment plan and summary Document
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
 
 // BPMN Task: Patient Consultation after Diagnosis
 * action[+].id = "patient-consultation-after-diagnosis"
@@ -242,7 +259,6 @@ Usage: #definition
 //* action[=].relatedAction[=].relationship = #before
 
 // BPMN Task: Shared Decision-Making
-// TODO: Treatment Plan Output
 * action[+].id = "shared-decision-making"
 * action[=].title = "Shared Decision Making"
 * action[=].description = "Shared Decision Making"
@@ -251,116 +267,20 @@ Usage: #definition
 * action[=].code = $SCT#223484005 "Discussion about treatment (procedure)"
 * action[=].code = $SCT#223487003 "Discussion about options (procedure)"
 * action[=].code = $SCT#707737009 "Discussion about priorities for care (procedure)"
-//* action[=].condition.kind = #start
-//* action[=].condition.expression.description = "Instant Patient Decision? [Yes]"
-//* action[=].condition.expression.language = #text/cql
-//* action[=].condition.expression.expression = "Instant Patient Decision Making"
-//* action[=].relatedAction[+].actionId = "patient-decision-making"
-//* action[=].relatedAction[=].relationship = #after
 * action[=].relatedAction[+].actionId = "patient-consultation-after-diagnosis"
 * action[=].relatedAction[=].relationship = #after-end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// BPMN Task: Staging Diagnostics / Imaging
-* action[=].action[+].id = "imaging"
-* action[=].action[=].title = "Imaging"
-* action[=].action[=].description = "Imaging, Usually in Ambulatory Care; X-Ray Thorax, PET-CT Thorax/Abdomen, MRI Skull"
-* action[=].action[=].code = $SCT#363679005 "Imaging (procedure)"
-* action[=].action[=].code = $SCT#413815006 "Chest imaging (procedure)"
-* action[=].action[=].code = $SCT#441875004 "Imaging of head (procedure)"
-* action[=].action[=].code = $SCT#363680008 "Radiographic imaging procedure (procedure)"
-* action[=].action[=].code = $SCT#450436003 "Positron emission tomography with computed tomography (procedure)"
-* action[=].action[=].code = $SCT#241601008 "Magnetic resonance imaging of head (procedure)"
-* action[=].action[=].relatedAction.actionId = "tumor-staging"
-* action[=].action[=].relatedAction.relationship = #before-start
-
-// BPMN Activity: Staging Diagnostics / Diagnosis Assurance
-* action[=].action[+].id = "diagnosis-assurance"
-* action[=].action[=].title = "Diagnosis Assurance"
-* action[=].action[=].description = "Diagnosis Assurance"
-* action[=].action[=].code = $SCT#165197003 "Diagnostic assessment (procedure)"
-* action[=].action[=].relatedAction.actionId = "pathology"
-* action[=].action[=].relatedAction.relationship = #before-start
-* action[=].action[=].groupingBehavior = #logical-group
-* action[=].action[=].selectionBehavior = #any
-
-// BPMN Task: Staging Diagnostics / Diagnosis Assurance / Bronchoscopy
-* action[=].action[=].action[+].id = "bronchoscopy"
-* action[=].action[=].action[=].title = "Bronchoscopy"
-* action[=].action[=].action[=].description = "Bronchoscopy"
-* action[=].action[=].action[=].code = $SCT#55198006 "Bronchoscopy with biopsy (procedure)"
-
-// BPMN Task: Staging Diagnostics / Diagnosis Assurance / Mediastinal Staging
-// NOTE: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4128458/
-// NOTE: https://pubmed.ncbi.nlm.nih.gov/31797211/
-* action[=].action[=].action[+].id = "mediastinal-staging"
-* action[=].action[=].action[=].title = "Mediastinal Staging"
-* action[=].action[=].action[=].description = "Mediastinal Staging (e.g. EBUS/EUS)"
-* action[=].action[=].action[=].code = $SCT#441561002 "Endobronchial ultrasound examination of mediastinum (procedure)"
-* action[=].action[=].action[=].code = $SCT#1137699004 "Endoscopic EBUS-TBNA (endobronchial ultrasound transbronchial needle aspiration) of mediastinal lymph node"
-* action[=].action[=].action[=].code = $SCT#450556004 "Endoscopic ultrasonography (procedure)"
-* action[=].action[=].action[=].code = $SCT#879954008 "EUS FNA (endoscopic ultrasonography fine needle aspiration) of mediastinal lymph node"
-* action[=].action[=].action[=].code = $SCT#261479009 "Mediastinoscopy (procedure)"
-* action[=].action[=].action[=].code = $SCT#238325002 "Mediastinoscopy and lymph node sampling (procedure)"
-
-// BPMN Task: Staging Diagnostics / Diagnosis Assurance / Image-guided Biopsy
-// NOTE: https://pubmed.ncbi.nlm.nih.gov/27481575/
-* action[=].action[=].action[+].id = "image-guided-biopsy"
-* action[=].action[=].action[=].title = "Image-guided Biopsy"
-* action[=].action[=].action[=].description = "Image-guided Biopsy (Primary Lesion, Metastases)"
-* action[=].action[=].action[=].code = $SCT#277590007 "Imaging guided biopsy (procedure)"
-* action[=].action[=].action[=].code = $SCT#277591006 "Computed tomography guided biopsy (procedure)"
-
-// BPMN Task: Staging Diagnostics / Pathology, Molecular Pathology
-* action[=].action[+].id = "pathology"
-* action[=].action[=].title = "Pathology / Molecular Pathology"
-* action[=].action[=].description = "Pathology / Molecular Pathology"
-* action[=].action[=].code = $SCT#168456004 "Gross pathology request (procedure)"
-* action[=].action[=].code = $SCT#275640004 "Refer to pathology laboratory (procedure)"
-* action[=].action[=].code = $SCT#708179009 "Molecular pathology service (qualifier value)"
-* action[=].action[=].relatedAction.actionId = "diagnosis-assurance"
-* action[=].action[=].relatedAction.relationship = #after-end
-* action[=].action[=].relatedAction.actionId = "tumor-staging"
-* action[=].action[=].relatedAction.relationship = #before-start
-// TODO: Pathology Report Result Output
-
-// BPMN Task: Staging Diagnostics / cTNM Classification and Staging
-* action[=].action[+].id = "tumor-staging"
-* action[=].action[=].title = "cTNM Classification and Staging"
-* action[=].action[=].description = "Clinical Stage Classifications of Malignant Tumors (cTNM) and Staging"
-* action[=].action[=].code = $SCT#254292007 "Tumor staging (tumor staging)"
-* action[=].action[=].code = $SCT#258234001 "Tumor-node-metastasis (TNM) tumor staging classifications (tumor staging)"
-* action[=].action[=].relatedAction.actionId = "imaging"
-* action[=].action[=].relatedAction.relationship = #after-end
-* action[=].action[=].relatedAction.actionId = "pathology"
-* action[=].action[=].relatedAction.relationship = #after-end
-
-// BPMN Task: CCCN Discharge
-* action[+].id = "cccn-discharge"
-* action[=].title = "CCCN Discharge"
-* action[=].description = "CCCN Discharge"
-* action[=].code = $SCT#58000006 "Patient discharge (procedure)"
-* action[=].condition.kind = #start
-* action[=].condition.expression.description = "No lung cancer confirmation"
-* action[=].condition.expression.language = #text/cql
-* action[=].condition.expression.expression = "Diagnosis Not Confirmed"
-* action[=].relatedAction.actionId = "staging-diagnostics"
-* action[=].relatedAction.relationship = #after-end
+// NOTE: (M)TB protocol with therapy recommendation
+* action[=].input[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#74156-1 // Oncology treatment plan and summary Document
+* action[=].input[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
+* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
+* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
+// NOTE: Information materials (e.g. smoking cecassion)
+* action[=].input[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#34895-3 // Education note
+* action[=].input[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#47042-7 // Counseling note
+* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#PATI // Patienteninformationen
+* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#ADM // Administratives Dokument
+// NOTE: Treatment plan
+* action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#74156-1 // Oncology treatment plan and summary Document
+* action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#56447-6 // Plan of care note
+* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#FPRO // Therapiedokumentation
+* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#PLA // Planungsdokument

@@ -91,9 +91,13 @@ Usage: #definition
 * action[=].action[=].relatedAction.relationship = #after-end
 * action[=].action[=].relatedAction.actionId = "tumor-staging"
 * action[=].action[=].relatedAction.relationship = #before-start
+// NOTE: Pathology findings report
+* action[=].action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#59776-5 // Procedure findings Narrative
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#27898-6 // Pathology studies (set)
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#PATH  // Molekularpathologiebefund
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#BEF // Molekularpathologiebefund
 * action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-04)
 * action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-05)
-// TODO: Pathology Report Result Output
 
 // BPMN Task: Staging Diagnostics / cTNM Classification and Staging
 * action[=].action[+].id = "tumor-staging"

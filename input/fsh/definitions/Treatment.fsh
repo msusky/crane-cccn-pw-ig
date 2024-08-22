@@ -21,6 +21,11 @@ Usage: #definition
 * action[=].relatedAction[=].relationship = #concurrent-with-start
 * action[=].relatedAction[+].actionId = "rehabilitation"
 * action[=].relatedAction[=].relationship = #concurrent-with-start
+// NOTE: Treatment plan
+* action[=].input[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#74156-1 // Oncology treatment plan and summary Document
+* action[=].input[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#56447-6 // Plan of care note
+* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#FPRO // Therapiedokumentation
+* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#PLA // Planungsdokument
 
 // BPMN Task: Therapy / Surgery
 * action[=].action[+].id = "surgery"

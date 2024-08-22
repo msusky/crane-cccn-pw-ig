@@ -80,33 +80,65 @@ Description: "The profile for the CraNE Comprehensive Cancer Care Network Pathwa
 * action.requiredBehavior MS
 * action.cardinalityBehavior MS
 * action.definition[x] MS
-* action.action MS
+
+//* action.documentation ^slicing.discriminator.type = #value
+//* action.documentation ^slicing.discriminator.path = "$this"
+//* action.documentation ^slicing.rules = #open
+//* action.documentation ^slicing.description = "Slice for the related documentation provided to perform the activity"
+//* action.documentation ^slicing.ordered = false
+//
+//* action.documentation contains PatientInformation 0..* MS
+//* action.documentation[PatientInformation].type = #documentation
+//* action.documentation[PatientInformation].display MS
+//* action.documentation[PatientInformation].url MS
+//* action.documentation[PatientInformation].document MS
+//
+//* action.documentation contains ClinicalGuideline 0..* MS
+//* action.documentation[ClinicalGuideline].type = #derived-from
+//* action.documentation[ClinicalGuideline].display MS
+//* action.documentation[ClinicalGuideline].citation MS
+//* action.documentation[ClinicalGuideline].url MS
+* insert SlicesOnHierachicalActionsRoot
+
+// TODO: Find better way to slice indefinit (recursion of) sub-actions of PlanDefinition.action (activity)
+// NOTE: Circular dependencies using RuleSet is prohibited (will be ignored), hence five levels are pre-defined
+RuleSet: SlicesOnHierachicalActionsRoot
+* insert SlicesOnHierachicalActions
+* action
+  * insert SlicesOnHierachicalActions
+  * action
+    * insert SlicesOnHierachicalActions
+    * action
+      * insert SlicesOnHierachicalActions
+      * action
+        * insert SlicesOnHierachicalActions
+
+RuleSet: SlicesOnHierachicalActions
+* action.input ^slicing.discriminator.type = #type
+* action.input ^slicing.discriminator.path = "$this"
+* action.input ^slicing.rules = #open
+* action.input ^slicing.description = "Slice for the input document objects, e.g. patient information"
+* action.input ^slicing.ordered = false
+* action.input contains DocumentObjectRequirement 0..* MS
+* action.input[DocumentObjectRequirement] only CraNE_CCCN_Pathway_Document_Object_Requirement
+
+* action.output ^slicing.discriminator.type = #type
+* action.output ^slicing.discriminator.path = "$this"
+* action.output ^slicing.rules = #open
+* action.output ^slicing.description = "Slice for the output document objects, e.g. tumor board protocol"
+* action.output ^slicing.ordered = false
+* action.output contains DocumentObjectRequirement 0..* MS
+* action.output[DocumentObjectRequirement] only CraNE_CCCN_Pathway_Document_Object_Requirement
 
 * action.code ^slicing.discriminator.type = #type
 * action.code ^slicing.discriminator.path = "coding.system"
 * action.code ^slicing.rules = #open
-* action.code ^slicing.description = "Slice of coding.system for use of Snomed CT"
+* action.code ^slicing.description = "Slice of coding.system for use of SNOMED CT"
 * action.code ^slicing.ordered = false
 * action.code contains SCT 0..* MS
 * action.code[SCT].coding.system = $SCT
 * action.code[SCT].coding.code 1..1 MS
-* insert ReportQualityIndicator
 
-// TODO: Find better way to slice indefinit (recursion of) sub-actions of PlanDefinition.action (activity)
-// NOTE: Circular dependencies using RuleSet is prohibited (will be ignored), hence five levels are pre-defined
-RuleSet: ReportQualityIndicator
-* action
-  * insert ReportQualityIndicatorAction
-  * action
-    * insert ReportQualityIndicatorAction
-    * action
-      * insert ReportQualityIndicatorAction
-      * action
-        * insert ReportQualityIndicatorAction
-        * action
-          * insert ReportQualityIndicatorAction
-
-RuleSet: ReportQualityIndicatorAction
 * action ^slicing.discriminator.type = #value
 * action ^slicing.discriminator.path = "action.definition[x]"
 * action ^slicing.rules = #open

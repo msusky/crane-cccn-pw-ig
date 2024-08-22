@@ -14,7 +14,9 @@
      "url": "https://simplifier.net/crane-cccn-pw-ig",
      "title": "CraNE CCCN Lung Cancer Pathway IG",
      "dependencies": {
-       "hl7.fhir.uv.cpg": "2.0.0-ballot"
+       "hl7.fhir.uv.cpg": "2.0.0-ballot",
+       "ihe.iti.mhd": "4.2.2",
+       "de.ihe-d.terminology": "3.0.1"
      },
      "author": "CraNE Joint Action",
      "jurisdiction": "http://unstats.un.org/unsd/methods/m49/m49.htm#150",
