@@ -4,7 +4,7 @@ Title: "CraNE CCCN Pathway Activity Treatment Planning Definition"
 Description: "CraNE Comprehensive Cancer Care Network Pathway Activity Treatment Planning Definition"
 Usage: #definition
 * insert Header
-
+* name = "CraNE_CCCN_Pathway_Activity_Treatment_Planning_Definition"
 * title = "Treatment Planning"
 
 // BPMN Activity: Standard Tumorboard (TB) Meeting
@@ -12,18 +12,22 @@ Usage: #definition
 * action[+].id = "tumor-conference"
 * action[=].title = "Tumorboard Meeting"
 * action[=].description = "Standard Tumorboard (TB) Meeting"
-* action[=].code = $SCT#708004003 "Multidisciplinary review (procedure)"
-* action[=].code = $SCT#287051000000107 "Multidisciplinary meeting (procedure)"
-* action[=].code = $SCT#399414003 "Multidisciplinary care conference for cancer care planning (procedure)"
+* action[=].code[SCT] = $SCT#708004003 "Multidisciplinary review (procedure)"
+* action[=].code[SCT] = $SCT#287051000000107 "Multidisciplinary meeting (procedure)"
+* action[=].code[SCT] = $SCT#399414003 "Multidisciplinary care conference for cancer care planning (procedure)"
 * action[=].groupingBehavior = #logical-group
 * action[=].selectionBehavior = #all
 * action[=].relatedAction.actionId = "staging-diagnostics"
 * action[=].relatedAction.relationship = #after-end
 // NOTE: TB protocol with therapy recommendation
 * action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#74156-1 // Oncology treatment plan and summary Document
-* action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
-* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
-* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
+* action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentType].path = "type"
+* action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
+* action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].path = "category"
+* action[=].output[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
+* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].path = "type"
+* action[=].output[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
+* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].path = "category"
 * action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-02)
 * action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-18)
 
@@ -32,8 +36,8 @@ Usage: #definition
 * action[=].action[+].id = "tumor-conference-registration"
 * action[=].action[=].title = "Registration"
 * action[=].action[=].description = "Registration of Patient for Tumorboard Meeting"
-* action[=].action[=].code = $SCT#307782001 "Registration procedure (procedure)"
-* action[=].action[=].code = $SCT#184047000 "Patient registration (procedure)"
+* action[=].action[=].code[SCT] = $SCT#307782001 "Registration procedure (procedure)"
+* action[=].action[=].code[SCT] = $SCT#184047000 "Patient registration (procedure)"
 * action[=].action[=].condition.kind = #start
 * action[=].action[=].condition.expression.description = "Therapeutic or Diagnostic Question for Patient"
 * action[=].action[=].condition.expression.language = #text/cql
@@ -45,7 +49,7 @@ Usage: #definition
 * action[=].action[+].id = "tumor-conference-preparation"
 * action[=].action[=].title = "Preparation"
 * action[=].action[=].description = "Preparation of Tumorboard Meeting"
-* action[=].action[=].code = $SCT#410538000 "Scheduling (procedure)"
+* action[=].action[=].code[SCT] = $SCT#410538000 "Scheduling (procedure)"
 * action[=].action[=].documentation[+].type = #documentation
 * action[=].action[=].documentation[=].display = "Main patient and treatment data are to be compiled in writing for the tumorboard meeting"
 * action[=].action[=].documentation[+].type = #documentation
@@ -62,9 +66,9 @@ Usage: #definition
 * action[=].action[+].id = "tumor-conference-presentation"
 * action[=].action[=].title = "Presentation"
 * action[=].action[=].description = "Presentation in Tumorboard Meeting"
-* action[=].action[=].code = $SCT#427272008 "Recommendation to physician (procedure)"
-* action[=].action[=].code = $SCT#223485006 "Discussion about therapy (procedure)"
-* action[=].action[=].code = $SCT#223487003 "Discussion about options (procedure)"
+* action[=].action[=].code[SCT] = $SCT#427272008 "Recommendation to physician (procedure)"
+* action[=].action[=].code[SCT] = $SCT#223485006 "Discussion about therapy (procedure)"
+* action[=].action[=].code[SCT] = $SCT#223487003 "Discussion about options (procedure)"
 * action[=].action[=].documentation[+].type = #documentation
 * action[=].action[=].documentation[=].display = "Discussion"
 * action[=].action[=].documentation[+].type = #documentation
@@ -80,17 +84,21 @@ Usage: #definition
 * action[=].action[=].relatedAction.relationship = #after-end
 // NOTE: TB protocol with therapy recommendation
 * action[=].action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#74156-1 // Oncology treatment plan and summary Document
-* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
-* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
-* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentType].path = "type"
+* action[=].action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].path = "category"
+* action[=].action[=].output[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].path = "type"
+* action[=].action[=].output[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].path = "category"
 
 // BPMN Activity: Molecular Tumorboard (MTB) Meeting
 * action[+].id = "molecular-tumor-conference"
 * action[=].title = "Molecular Tumorboard Meeting"
 * action[=].description = "Molecular Tumorboard (MTB) Meeting"
-* action[=].code = $SCT#708004003 "Multidisciplinary review (procedure)"
-* action[=].code = $SCT#287051000000107 "Multidisciplinary meeting (procedure)"
-* action[=].code = $SCT#399414003 "Multidisciplinary care conference for cancer care planning (procedure)"
+* action[=].code[SCT] = $SCT#708004003 "Multidisciplinary review (procedure)"
+* action[=].code[SCT] = $SCT#287051000000107 "Multidisciplinary meeting (procedure)"
+* action[=].code[SCT] = $SCT#399414003 "Multidisciplinary care conference for cancer care planning (procedure)"
 * action[=].condition.kind = #start
 * action[=].condition.expression.description = "Guideline-based treatment options given? [No]"
 * action[=].condition.expression.language = #text/cql
@@ -109,9 +117,13 @@ Usage: #definition
 * action[=].relatedAction.relationship = #after-end
 // NOTE: MTB protocol with therapy recommendation
 * action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#74156-1 // Oncology treatment plan and summary Document
-* action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
-* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
-* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
+* action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentType].path = "type"
+* action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
+* action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].path = "category"
+* action[=].output[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
+* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].path = "type"
+* action[=].output[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
+* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].path = "category"
 * action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-02)
 * action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-18)
 
@@ -119,8 +131,8 @@ Usage: #definition
 * action[=].action[+].id = "molecular-tumor-conference-registration"
 * action[=].action[=].title = "Registration"
 * action[=].action[=].description = "Registration of Patient for Molecular Tumorboard Meeting"
-* action[=].action[=].code = $SCT#307782001 "Registration procedure (procedure)"
-* action[=].action[=].code = $SCT#184047000 "Patient registration (procedure)"
+* action[=].action[=].code[SCT] = $SCT#307782001 "Registration procedure (procedure)"
+* action[=].action[=].code[SCT] = $SCT#184047000 "Patient registration (procedure)"
 * action[=].action[=].condition.kind = #start
 * action[=].action[=].condition.expression.description = "Therapeutic or Diagnostic Question for Patient"
 * action[=].action[=].condition.expression.language = #text/cql
@@ -133,9 +145,9 @@ Usage: #definition
 * action[=].action[+].id = "molecular-tumor-conference-presentation-optional"
 * action[=].action[=].title = "(1st) Presentation"
 * action[=].action[=].description = "(1st) Presentation in Molecular Tumorboard (optional)"
-* action[=].action[=].code = $SCT#708004003 "Multidisciplinary review (procedure)"
-* action[=].action[=].code = $SCT#287051000000107 "Multidisciplinary meeting (procedure)"
-* action[=].action[=].code = $SCT#399414003 "Multidisciplinary care conference for cancer care planning (procedure)"
+* action[=].action[=].code[SCT] = $SCT#708004003 "Multidisciplinary review (procedure)"
+* action[=].action[=].code[SCT] = $SCT#287051000000107 "Multidisciplinary meeting (procedure)"
+* action[=].action[=].code[SCT] = $SCT#399414003 "Multidisciplinary care conference for cancer care planning (procedure)"
 * action[=].action[=].documentation[+].type = #documentation
 * action[=].action[=].documentation[=].display = "Participants: pathologist, human genetics, haematology/ oncology specialist, tumor-specific diciplines (tumor entity expert)"
 * action[=].action[=].relatedAction[+].actionId = "molecular-tumor-conference-registration"
@@ -147,8 +159,8 @@ Usage: #definition
 * action[=].action[+].id = "molecular-diagnostics"
 * action[=].action[=].title = "Molecular Diagnostics"
 * action[=].action[=].description = "Molecular Diagnostics"
-* action[=].action[=].code = $SCT#396927009 "Molecular testing, diagnostic (procedure)"
-* action[=].action[=].code = $SCT#308539001 "Request procedure (procedure)"
+* action[=].action[=].code[SCT] = $SCT#396927009 "Molecular testing, diagnostic (procedure)"
+* action[=].action[=].code[SCT] = $SCT#308539001 "Request procedure (procedure)"
 * action[=].action[=].groupingBehavior = #logical-group
 * action[=].action[=].selectionBehavior = #all
 * action[=].action[=].relatedAction.actionId = "molecular-tumor-conference-presentation-optional"
@@ -158,10 +170,10 @@ Usage: #definition
 * action[=].action[=].action[+].id = "molecular-diagnostics-human-genetic-patho-analysis"
 * action[=].action[=].action[=].title = "Request for Human Genetic/ Molecular Pathological Analysis"
 * action[=].action[=].action[=].description = "Request for Human Genetic/ Molecular Pathological Analysis"
-* action[=].action[=].action[=].code = $SCT#116148004 "Molecular genetics procedure (procedure)"
-* action[=].action[=].action[=].code = $SCT#275640004 "Refer to pathology laboratory (procedure)"
-* action[=].action[=].action[=].code = $SCT#423039003 "Genetics education, guidance, counseling (procedure)"
-* action[=].action[=].action[=].code = $SCT#48051000087105 "Recommendation to perform genetic test (procedure)"
+* action[=].action[=].action[=].code[SCT] = $SCT#116148004 "Molecular genetics procedure (procedure)"
+* action[=].action[=].action[=].code[SCT] = $SCT#275640004 "Refer to pathology laboratory (procedure)"
+* action[=].action[=].action[=].code[SCT] = $SCT#423039003 "Genetics education, guidance, counseling (procedure)"
+* action[=].action[=].action[=].code[SCT] = $SCT#48051000087105 "Recommendation to perform genetic test (procedure)"
 * action[=].action[=].action[=].documentation[+].type = #documentation
 * action[=].action[=].action[=].documentation[=].display = "Next Generation Sequencing (NGS), DNA Panel or WES (Whole-Genome Sequencing, WGS)"
 * action[=].action[=].action[=].documentation[+].type = #documentation
@@ -175,9 +187,9 @@ Usage: #definition
 * action[=].action[=].action[+].id = "molecular-diagnostics-bioinformatic-analysis"
 * action[=].action[=].action[=].title = "Bioinformatic Analysis and Processing"
 * action[=].action[=].action[=].description = "Bioinformatic Analysis and Processing"
-* action[=].action[=].action[=].code = $SCT#363109007 "Evaluation of test results (procedure)"
-* action[=].action[=].action[=].code = $SCT#386344002 "Laboratory data interpretation (procedure)"
-* action[=].action[=].action[=].code = $SCT#169282000 "Diagnostic data computerization (procedure)"
+* action[=].action[=].action[=].code[SCT] = $SCT#363109007 "Evaluation of test results (procedure)"
+* action[=].action[=].action[=].code[SCT] = $SCT#386344002 "Laboratory data interpretation (procedure)"
+* action[=].action[=].action[=].code[SCT] = $SCT#169282000 "Diagnostic data computerization (procedure)"
 * action[=].action[=].action[=].documentation[+].type = #documentation
 * action[=].action[=].action[=].documentation[=].display = "Designation/ naming of the tools used with the corresponding versions"
 * action[=].action[=].action[=].documentation[+].type = #documentation
@@ -196,7 +208,7 @@ Usage: #definition
 * action[=].action[=].action[+].id = "molecular-diagnostics-reporting"
 * action[=].action[=].action[=].title = "Preparation of Findings/ Reporting"
 * action[=].action[=].action[=].description = "Preparation of Findings/ Reporting"
-* action[=].action[=].action[=].code = $SCT#33526004 "Laboratory reporting, electronic (procedure)"
+* action[=].action[=].action[=].code[SCT] = $SCT#33526004 "Laboratory reporting, electronic (procedure)"
 * action[=].action[=].action[=].relatedAction.actionId = "molecular-diagnostics-bioinformatic-analysis"
 * action[=].action[=].action[=].relatedAction.relationship = #after-end
 
@@ -205,24 +217,28 @@ Usage: #definition
 * action[=].action[+].id = "molecular-tumor-conference-presentation"
 * action[=].action[=].title = "(2nd) Presentation"
 * action[=].action[=].description = "(2nd) Presentation in Molecular Tumorboard"
-* action[=].action[=].code = $SCT#708004003 "Multidisciplinary review (procedure)"
-* action[=].action[=].code = $SCT#287051000000107 "Multidisciplinary meeting (procedure)"
-* action[=].action[=].code = $SCT#399414003 "Multidisciplinary care conference for cancer care planning (procedure)"
+* action[=].action[=].code[SCT] = $SCT#708004003 "Multidisciplinary review (procedure)"
+* action[=].action[=].code[SCT] = $SCT#287051000000107 "Multidisciplinary meeting (procedure)"
+* action[=].action[=].code[SCT] = $SCT#399414003 "Multidisciplinary care conference for cancer care planning (procedure)"
 * action[=].action[=].documentation[+].type = #documentation
 * action[=].action[=].documentation[=].display = "Participants: pathologist, human genetics, haematology/ oncology specialist, tumor-specific diciplines (tumor entity expert)"
 * action[=].action[=].relatedAction.actionId = "molecular-diagnostics"
 * action[=].action[=].relatedAction.relationship = #after-end
 // NOTE: MTB protocol with therapy recommendation
 * action[=].action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#74156-1 // Oncology treatment plan and summary Document
-* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
-* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
-* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentType].path = "type"
+* action[=].action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].path = "category"
+* action[=].action[=].output[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].path = "type"
+* action[=].action[=].output[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
+* action[=].action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].path = "category"
 
 // BPMN Task: Patient Consultation after Diagnosis
 * action[+].id = "patient-consultation-after-diagnosis"
 * action[=].title = "Patient Consultation"
 * action[=].description = "Patient Consultation after Diagnosis"
-* action[=].code = $SCT#1237136005 "Consultation with patient (procedure)"
+* action[=].code[SCT] = $SCT#1237136005 "Consultation with patient (procedure)"
 * action[=].condition.kind = #start
 * action[=].condition.expression.description = "Guideline-based treatment options given? [Yes]"
 * action[=].condition.expression.language = #text/cql
@@ -245,10 +261,10 @@ Usage: #definition
 //* action[+].id = "patient-decision-making"
 //* action[=].title = "Individual Reflection / Discussion, Second Opinion"
 //* action[=].description = "Individual Reflection and Discussions, Second Opinion"
-//* action[=].code = $SCT#77406008 "Confirmatory medical consultation (procedure)"
-//* action[=].code = $SCT#223485006 "Discussion about therapy (procedure)"
-//* action[=].code = $SCT#223484005 "Discussion about treatment (procedure)"
-//* action[=].code = $SCT#223487003 "Discussion about options (procedure)"
+//* action[=].code[SCT] = $SCT#77406008 "Confirmatory medical consultation (procedure)"
+//* action[=].code[SCT] = $SCT#223485006 "Discussion about therapy (procedure)"
+//* action[=].code[SCT] = $SCT#223484005 "Discussion about treatment (procedure)"
+//* action[=].code[SCT] = $SCT#223487003 "Discussion about options (procedure)"
 //* action[=].condition.kind = #applicability
 //* action[=].condition.expression.description = "Instant Patient Decision? [No]"
 //* action[=].condition.expression.language = #text/cql
@@ -262,25 +278,37 @@ Usage: #definition
 * action[+].id = "shared-decision-making"
 * action[=].title = "Shared Decision Making"
 * action[=].description = "Shared Decision Making"
-* action[=].code = $SCT#77406008 "Confirmatory medical consultation (procedure)"
-* action[=].code = $SCT#223485006 "Discussion about therapy (procedure)"
-* action[=].code = $SCT#223484005 "Discussion about treatment (procedure)"
-* action[=].code = $SCT#223487003 "Discussion about options (procedure)"
-* action[=].code = $SCT#707737009 "Discussion about priorities for care (procedure)"
+* action[=].code[SCT] = $SCT#77406008 "Confirmatory medical consultation (procedure)"
+* action[=].code[SCT] = $SCT#223485006 "Discussion about therapy (procedure)"
+* action[=].code[SCT] = $SCT#223484005 "Discussion about treatment (procedure)"
+* action[=].code[SCT] = $SCT#223487003 "Discussion about options (procedure)"
+* action[=].code[SCT] = $SCT#707737009 "Discussion about priorities for care (procedure)"
 * action[=].relatedAction[+].actionId = "patient-consultation-after-diagnosis"
 * action[=].relatedAction[=].relationship = #after-end
 // NOTE: (M)TB protocol with therapy recommendation
 * action[=].input[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#74156-1 // Oncology treatment plan and summary Document
-* action[=].input[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
-* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
-* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
+* action[=].input[DocumentObjectRequirement][=].codeFilter[DocumentType].path = "type"
+* action[=].input[DocumentObjectRequirement][+].codeFilter[DocumentClass].code = $LNC#62385-0 // Recommendation [interpretation] Document
+* action[=].input[DocumentObjectRequirement][=].codeFilter[DocumentClass].path = "category"
+* action[=].input[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#ONKO // Onkologische Dokumente
+* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].path = "type"
+* action[=].input[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#DUR // Durchführungsprotokoll
+* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].path = "category"
 // NOTE: Information materials (e.g. smoking cecassion)
 * action[=].input[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#34895-3 // Education note
-* action[=].input[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#47042-7 // Counseling note
-* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#PATI // Patienteninformationen
-* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#ADM // Administratives Dokument
+* action[=].input[DocumentObjectRequirement][=].codeFilter[DocumentType].path = "type"
+* action[=].input[DocumentObjectRequirement][+].codeFilter[DocumentClass].code = $LNC#47042-7 // Counseling note
+* action[=].input[DocumentObjectRequirement][=].codeFilter[DocumentClass].path = "category"
+* action[=].input[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#PATI // Patienteninformationen
+* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].path = "type"
+* action[=].input[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#ADM // Administratives Dokument
+* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].path = "category"
 // NOTE: Treatment plan
 * action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#74156-1 // Oncology treatment plan and summary Document
-* action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#56447-6 // Plan of care note
-* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#FPRO // Therapiedokumentation
-* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#PLA // Planungsdokument
+* action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentType].path = "type"
+* action[=].output[DocumentObjectRequirement][+].codeFilter[DocumentClass].code = $LNC#56447-6 // Plan of care note
+* action[=].output[DocumentObjectRequirement][=].codeFilter[DocumentClass].path = "category"
+* action[=].output[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#FPRO // Therapiedokumentation
+* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].path = "type"
+* action[=].output[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#PLA // Planungsdokument
+* action[=].output[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].path = "category"

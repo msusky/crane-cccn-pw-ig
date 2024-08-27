@@ -4,13 +4,13 @@ Title: "CraNE CCCN Pathway Activity Screening Definition"
 Description: "CraNE Comprehensive Cancer Care Network Pathway Activity Screening Definition"
 Usage: #definition
 * insert Header
-
+* name = "CraNE_CCCN_Pathway_Activity_Screening_Definition"
 * title = "Screening"
 
 // BPMN Task: Screening (LDCT)
 * action[+].title = "Screening (LDCT)"
 * action[=].description = "Screening by low-dose computer tomography (LDCT)"
-* action[=].code = $SCT#241540006 "Computed tomography of lungs (procedure)"
+* action[=].code[SCT] = $SCT#241540006 "Computed tomography of lungs (procedure)"
 * action[=].requiredBehavior = #must-unless-documented
 * action[=].cardinalityBehavior = #multiple
 * action[=].condition[+].kind = #start

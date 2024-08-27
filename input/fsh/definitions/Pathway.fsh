@@ -5,13 +5,14 @@ Title: "CraNE CCCN Pathway Definition"
 Description: "CraNE Comprehensive Cancer Care Network Pathway Definition"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Pathway_Definition"
 // NOTE: Pathway with single strategy
 * type = #clinical-protocol
 
 // NOTE: Intention of the pathway
 // TODO: Probably needs expert validation
-* goal.description = $SCT#363358000 "Malignant tumor of lung (disorder)"
-* goal.addresses = $ICD10#C34- "Malignant neoplasm of bronchus and lung"
+* goal.description.coding[SCT] = $SCT#363358000 "Malignant tumor of lung (disorder)"
+* goal.addresses.coding[ICD10] = $ICD10#C34 "Malignant neoplasm of bronchus and lung"
 
 // NOTE: Main pathway strategy
 * action.title = "CCCN Lung Cancer Process Flow Recommendation"
@@ -26,6 +27,7 @@ Title: "CraNE CCCN Pathway Process Flow Definition"
 Description: "CraNE Comprehensive Cancer Care Network Pathway Process Flow Definition"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Pathway_Process_Flow_Definition"
 
 // BPMN Group: Screening
 * action[+].id = "cccn-pre-entry"

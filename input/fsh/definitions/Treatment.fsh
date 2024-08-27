@@ -4,14 +4,14 @@ Title: "CraNE CCCN Pathway Activity Treatment Definition"
 Description: "CraNE Comprehensive Cancer Care Network Pathway Activity Treatment Definition"
 Usage: #definition
 * insert Header
-
+* name = "CraNE_CCCN_Pathway_Activity_Treatment_Definition"
 * title = "Treatment"
 
 // BPMN Activity: Therapy
 * action[+].id = "treatment"
 * action[=].title = "Treatment"
 * action[=].description = "Treatment / Treatment Phase"
-* action[=].code = $SCT#7922000 "General treatment (procedure)"
+* action[=].code[SCT] = $SCT#7922000 "General treatment (procedure)"
 * action[=].groupingBehavior = #logical-group
 * action[=].selectionBehavior = #one-or-more
 * action[=].cardinalityBehavior = #multiple
@@ -23,15 +23,19 @@ Usage: #definition
 * action[=].relatedAction[=].relationship = #concurrent-with-start
 // NOTE: Treatment plan
 * action[=].input[DocumentObjectRequirement][+].codeFilter[DocumentType].code = $LNC#74156-1 // Oncology treatment plan and summary Document
-* action[=].input[DocumentObjectRequirement][=].codeFilter[DocumentClass].code = $LNC#56447-6 // Plan of care note
-* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#FPRO // Therapiedokumentation
-* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#PLA // Planungsdokument
+* action[=].input[DocumentObjectRequirement][=].codeFilter[DocumentType].path = "type"
+* action[=].input[DocumentObjectRequirement][+].codeFilter[DocumentClass].code = $LNC#56447-6 // Plan of care note
+* action[=].input[DocumentObjectRequirement][=].codeFilter[DocumentClass].path = "category"
+* action[=].input[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentType].code = $ihe-de-xds-type-codes#FPRO // Therapiedokumentation
+* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentType].path = "type"
+* action[=].input[DocumentObjectRequirement][+].codeFilter[IheDeXdsDocumentClass].code = $ihe-de-xds-class-codes#PLA // Planungsdokument
+* action[=].input[DocumentObjectRequirement][=].codeFilter[IheDeXdsDocumentClass].path = "category"
 
 // BPMN Task: Therapy / Surgery
 * action[=].action[+].id = "surgery"
 * action[=].action[=].title = "Surgery"
 * action[=].action[=].description = "Surgery"
-* action[=].action[=].code = $SCT#387713003 "Surgical procedure (procedure)"
+* action[=].action[=].code[SCT] = $SCT#387713003 "Surgical procedure (procedure)"
 * action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-04)
 * action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-05)
 * action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-07)
@@ -46,7 +50,7 @@ Usage: #definition
 * action[=].action[+].id = "radio-chemo-therapy"
 * action[=].action[=].title = "Radio (Chemo-) Therapy"
 * action[=].action[=].description = "Radio (Chemo-) Therapy"
-* action[=].action[=].code = $SCT#703423002 "Combined chemotherapy and radiation therapy (procedure)"
+* action[=].action[=].code[SCT] = $SCT#703423002 "Combined chemotherapy and radiation therapy (procedure)"
 * action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-03)
 * action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-13)
 * action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-15)
@@ -56,10 +60,10 @@ Usage: #definition
 * action[=].action[+].id = "systemic-therapy"
 * action[=].action[=].title = "Systemic Therapy"
 * action[=].action[=].description = "Systemic Therapy"
-* action[=].action[=].code = $SCT#367336001 "Chemotherapy (procedure)"
-* action[=].action[=].code = $SCT#76334006 "Immunotherapy (procedure)"
-* action[=].action[=].code = $SCT#169413002 "Hormone therapy (procedure)"
-* action[=].action[=].code = $SCT#416608005 "Drug therapy (procedure)"
+* action[=].action[=].code[SCT] = $SCT#367336001 "Chemotherapy (procedure)"
+* action[=].action[=].code[SCT] = $SCT#76334006 "Immunotherapy (procedure)"
+* action[=].action[=].code[SCT] = $SCT#169413002 "Hormone therapy (procedure)"
+* action[=].action[=].code[SCT] = $SCT#416608005 "Drug therapy (procedure)"
 * action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-14)
 * action[=].action[=].action[ReportQualityIndicator].definitionCanonical = Canonical(crane-cccn-report-quality-indicator-17)
 
@@ -67,10 +71,10 @@ Usage: #definition
 * action[=].action[+].id = "other-therapy"
 * action[=].action[=].title = "Other Therapy"
 * action[=].action[=].description = "Other Therapy"
-* action[=].action[=].code = $SCT#243121000 "Medical therapy (procedure)"
-* action[=].action[=].code = $SCT#1259201000 "Adjuvant drug therapy (procedure)"
-* action[=].action[=].code = $SCT#385797002 "Adverse drug reaction prevention (procedure)"
-* action[=].action[=].code = $SCT#396081009 "Adverse drug reaction prevention management (procedure)"
+* action[=].action[=].code[SCT] = $SCT#243121000 "Medical therapy (procedure)"
+* action[=].action[=].code[SCT] = $SCT#1259201000 "Adjuvant drug therapy (procedure)"
+* action[=].action[=].code[SCT] = $SCT#385797002 "Adverse drug reaction prevention (procedure)"
+* action[=].action[=].code[SCT] = $SCT#396081009 "Adverse drug reaction prevention management (procedure)"
 * action[=].action[=].documentation[+].type = #documentation
 * action[=].action[=].documentation[=].display = "E.g. in case of malignant pleural effusion, hemoptysis, superior vena cava syndrome, tracheobronchial tumour obstruction"
 * action[=].action[=].documentation[+].type = #documentation
@@ -81,15 +85,15 @@ Usage: #definition
 * action[=].action[+].id = "eol-supportive-care"
 * action[=].action[=].title = "End-of-life Care/ Supportive Care"
 * action[=].action[=].description = "End-of-life Care/ Supportive Care"
-* action[=].action[=].code = $SCT#713058002 "End of life care planning (procedure)"
-* action[=].action[=].code = $SCT#362964009 "Palliative procedure (procedure)"
+* action[=].action[=].code[SCT] = $SCT#713058002 "End of life care planning (procedure)"
+* action[=].action[=].code[SCT] = $SCT#362964009 "Palliative procedure (procedure)"
 
 // BPMN Task: Post-operative/ -therapeutic/ mid-therapeutic TB/MTB meeting
 * action[+].id = "therapy-evaluation"
 * action[=].title = "Post-operative/ -therapeutic/ mid-therapeutic TB/MTB Meeting"
 * action[=].description = "Post-operative/ -therapeutic/ mid-therapeutic (Molecular) Tumor Board Meeting"
-* action[=].code = $SCT#720006006 "Cancer care review (procedure)"
-* action[=].code = $SCT#425268008 "Review of care plan (procedure)"
+* action[=].code[SCT] = $SCT#720006006 "Cancer care review (procedure)"
+* action[=].code[SCT] = $SCT#425268008 "Review of care plan (procedure)"
 * action[=].condition.kind = #start
 * action[=].condition.expression.description = "Patient Undergone Surgery"
 * action[=].condition.expression.language = #text/cql
@@ -112,7 +116,7 @@ Usage: #definition
 * action[+].id = "supportive-palliative-care"
 * action[=].title = "Supportive Care/ Early Integration of Palliative Care"
 * action[=].description = "Supportive Care/ Early Integration of Palliative Care"
-* action[=].code = $SCT#362964009 "Palliative procedure (procedure)"
+* action[=].code[SCT] = $SCT#362964009 "Palliative procedure (procedure)"
 * action[=].documentation[+].type = #documentation
 * action[=].documentation[=].display = "In parallel to therapy"
 * action[=].documentation[+].type = #documentation
@@ -127,10 +131,10 @@ Usage: #definition
 * action[+].id = "rehabilitation"
 * action[=].title = "Rehabilitation"
 * action[=].description = "Rehabilitation (optional)"
-* action[=].code = $SCT#709503007 "Assessment of quality of life (procedure)"
-* action[=].code = $SCT#410081009 "Rehabilitation therapy assessment (procedure)"
-* action[=].code = $SCT#410082002 "Rehabilitation therapy education (procedure)"
-* action[=].code = $SCT#410083007 "Rehabilitation therapy management (procedure)"
+* action[=].code[SCT] = $SCT#709503007 "Assessment of quality of life (procedure)"
+* action[=].code[SCT] = $SCT#410081009 "Rehabilitation therapy assessment (procedure)"
+* action[=].code[SCT] = $SCT#410082002 "Rehabilitation therapy education (procedure)"
+* action[=].code[SCT] = $SCT#410083007 "Rehabilitation therapy management (procedure)"
 * action[=].condition.kind = #applicability
 * action[=].condition.expression.description = "According to National Standards/ Conditions"
 * action[=].condition.expression.language = #text/cql

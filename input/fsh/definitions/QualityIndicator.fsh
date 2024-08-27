@@ -1,7 +1,7 @@
 RuleSet: QualityIndicatorKind(type, scoring, improvement)
-* improvementNotation = #{improvement}
-* scoring = #{scoring}
-* type = #{type}
+* improvementNotation = $measure-improvement-notation#{improvement}
+* scoring = $measure-scoring#{scoring}
+* type = $measure-type#{type}
 
 RuleSet: QualityIndicatorKindDefaults
 * insert QualityIndicatorKind(outcome, ratio, increase)
@@ -23,6 +23,11 @@ RuleSet: PrimaryCaseDefinition
   - Two primary cases with metachronous treatment, if these occur on different sides (not counted as a second primary case is the occurrence in different lobes on the same side)
 "
 
+//Instance: crane-cccn-quality-indicator-library
+//InstanceOf: Library
+//Title: "Library for Quality Indicators"
+//Usage: 
+
 // Quality Indicator #01 Definitions
 Instance: crane-cccn-report-quality-indicator-01
 InstanceOf: CraNE_CCCN_Report_Quality_Indicator_Definition
@@ -30,6 +35,7 @@ Title: "Report Quality Indicator #01"
 Description: "QI 1: Percentage of patients having surgery for a NSCLC discussed in a postoperative tumour board/MDT meeting"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_01"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-01)
 
 Instance: crane-cccn-quality-indicator-01
@@ -39,6 +45,7 @@ Description: "QI 1: Percentage of patients having surgery for a NSCLC discussed 
 Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
+* name = "CraNE_CCCN_QI_01"
 * group.population.code = #numerator
 * group.population.description = "Patients of the denominator with discussion in a postoperative tumour board/MDT meeting"
 * group.population.criteria.language = #text/cql
@@ -58,6 +65,7 @@ Title: "Report Quality Indicator #02"
 Description: "QI 2: Pretherapeutic tumour board/MDT meeting"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_02"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-02)
 
 Instance: crane-cccn-quality-indicator-02
@@ -67,6 +75,7 @@ Description: "QI 2: Pretherapeutic tumour board/MDT meeting"
 Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
+* name = "CraNE_CCCN_QI_02"
 * clinicalRecommendationStatement = "Target value: ≥ 90%"
 * definition = "Pretherapeutic: before surgery and/or systemic treatment"
 * group.population.code = #numerator
@@ -88,6 +97,7 @@ Title: "Report Quality Indicator #03"
 Description: "QI 3: PD-L1 testing for NSCLC in stage III with radiochemotherapy"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_03"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-03)
 
 Instance: crane-cccn-quality-indicator-03
@@ -98,6 +108,7 @@ Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
 * insert PrimaryCaseDefinition
+* name = "CraNE_CCCN_QI_03"
 * clinicalRecommendationStatement = "Target value: ≥ 75%"
 * group.population.code = #numerator
 * group.population.description = "Primary cases of the denominator with PD-L1 testing before starting radio-chemotherapy"
@@ -118,6 +129,7 @@ Title: "Report Quality Indicator #04"
 Description: "QI 4: Pathological Diagnosis"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_04"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-04)
 
 Instance: crane-cccn-quality-indicator-04
@@ -127,6 +139,7 @@ Description: "QI 4: Pathological Diagnosis"
 Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
+* name = "CraNE_CCCN_QI_04"
 * clinicalRecommendationStatement = "Target value: 80%"
 * group.population.code = #numerator
 * group.population.description = "Number of patients with Lung Cancer who have a pathological diagnosis (including following surgical resection)"
@@ -147,6 +160,7 @@ Title: "Report Quality Indicator #05"
 Description: "QI 5: Pathological Diagnosis – tumour subtype"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_05"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-05)
 
 Instance: crane-cccn-quality-indicator-05
@@ -156,6 +170,7 @@ Description: "QI 5: Pathological Diagnosis – tumour subtype"
 Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
+* name = "CraNE_CCCN_QI_05"
 * clinicalRecommendationStatement = "Target value: 90%"
 * definition = "Tumour subtype: squamous/nonsquamous"
 * group.population.code = #numerator
@@ -177,6 +192,7 @@ Title: "Report Quality Indicator #06"
 Description: "QI 6: Pre-treatment diagnosis"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_06"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-06)
 
 Instance: crane-cccn-quality-indicator-06
@@ -186,6 +202,7 @@ Description: "QI 6: Pre-treatment diagnosis"
 Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
+* name = "CraNE_CCCN_QI_06"
 * clinicalRecommendationStatement = "Target value: 95%"
 * group.population.code = #numerator
 * group.population.description = "Number of patients who receive curative treatment (radical radiotherapy, radical chemoradiotherapy or surgical resection) that have a cytological/histological diagnosis prior to treatment"
@@ -206,6 +223,7 @@ Title: "Report Quality Indicator #07"
 Description: "QI 7: Surgical expertise: Number of lung resections"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_07"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-07)
 
 Instance: crane-cccn-quality-indicator-07
@@ -215,6 +233,7 @@ Description: "QI 7: Surgical expertise: Number of lung resections"
 Usage: #definition
 * insert Header
 * insert QualityIndicatorKind(outcome,continuous-variable,increase)
+* name = "CraNE_CCCN_QI_07"
 * clinicalRecommendationStatement = "Target value: ≥ 75 (Validated in ECC Lung Cancer Centres)"
 * definition = "Anatomical resections: anatomical segment resection, lobectomy, pneumectomy, bronchio- and angioplasty"
 * group.population.code = #measure-population
@@ -232,6 +251,7 @@ Title: "Report Quality Indicator #08"
 Description: "QI 8: Videothoracoscopic (VATS) and robotic-assisted (RATS) anatomical resections"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_08"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-08)
 
 Instance: crane-cccn-quality-indicator-08
@@ -242,6 +262,7 @@ Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
 * insert PrimaryCaseDefinition
+* name = "CraNE_CCCN_QI_08"
 * definition = "Anatomical resections: anatomical segment resection, lobectomy, pneumectomy, bronchio- and angioplasty"
 * group.population.code = #numerator
 * group.population.description = "Operations of the denominator performed videothoracoscopically (VATS) and/or robot-assisted (RATS)"
@@ -262,6 +283,7 @@ Title: "Report Quality Indicator #09"
 Description: "QI 9: Local R0 resections in stages IA/B and IIA/B"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_09"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-09)
 
 Instance: crane-cccn-quality-indicator-09
@@ -272,6 +294,7 @@ Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
 * insert PrimaryCaseDefinition
+* name = "CraNE_CCCN_QI_09"
 * clinicalRecommendationStatement = "Target value: ≥ 95%"
 * group.population.code = #numerator
 * group.population.description = "Primary cases of the denominator with (local) R0 resections after completion of surgical treatment"
@@ -292,6 +315,7 @@ Title: "Report Quality Indicator #10"
 Description: "QI 10: Local R0 resections in stages IIIA/B"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_10"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-10)
 
 Instance: crane-cccn-quality-indicator-10
@@ -302,6 +326,7 @@ Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
 * insert PrimaryCaseDefinition
+* name = "CraNE_CCCN_QI_10"
 * clinicalRecommendationStatement = "Target value: ≥ 85%"
 * group.population.code = #numerator
 * group.population.description = "Primary cases of the denominator with (local) R0 resections after completion of surgical treatment"
@@ -322,6 +347,7 @@ Title: "Report Quality Indicator #11"
 Description: "QI 11: Anatomical pulmonary resection for NSCLC stage I/II with a tumour >= 2cm"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_11"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-11)
 
 Instance: crane-cccn-quality-indicator-11
@@ -331,6 +357,7 @@ Description: "QI 11: Anatomical pulmonary resection for NSCLC stage I/II with a 
 Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
+* name = "CraNE_CCCN_QI_11"
 * group.population.code = #numerator
 * group.population.description = "Patients of the denominator with anatomical pulmonary resection (no segmentectomy)"
 * group.population.criteria.language = #text/cql
@@ -350,6 +377,7 @@ Title: "Report Quality Indicator #12"
 Description: "QI 12: Surgical Lymph Node Staging >=10 Lymph nodes at resection"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_12"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-12)
 
 Instance: crane-cccn-quality-indicator-12
@@ -359,6 +387,7 @@ Description: "QI 12: Surgical Lymph Node Staging >=10 Lymph nodes at resection"
 Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
+* name = "CraNE_CCCN_QI_12"
 * group.population.code = #numerator
 * group.population.description = "Patients of the denominator with lymph node staging >=10 lymph nodes"
 * group.population.criteria.language = #text/cql
@@ -377,6 +406,7 @@ Title: "Report Quality Indicator #13"
 Description: "QI 13: Stage II-III NSCLC patients receiving chemo-radiation"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_13"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-13)
 
 Instance: crane-cccn-quality-indicator-13
@@ -386,6 +416,7 @@ Description: "QI 13: Stage II-III NSCLC patients receiving chemo-radiation"
 Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
+* name = "CraNE_CCCN_QI_13"
 * group.population.code = #numerator
 * group.population.description = "Receiving concomitant or sequential chemo-radiation"
 * group.population.criteria.language = #text/cql
@@ -404,6 +435,7 @@ Title: "Report Quality Indicator #14"
 Description: "QI 14: Adjuvant cisplatin-based chemotherapy for stages II-IIIA1/2"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_14"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-14)
 
 Instance: crane-cccn-quality-indicator-14
@@ -414,6 +446,7 @@ Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
 * insert PrimaryCaseDefinition
+* name = "CraNE_CCCN_QI_14"
 * clinicalRecommendationStatement = "Plausibility corridor: < 15%"
 * group.population.code = #numerator
 * group.population.description = "Primary cases of the denominator with cisplatin-based chemotherapy"
@@ -434,6 +467,7 @@ Title: "Report Quality Indicator #15"
 Description: "QI 15: Stereotactic Ablative Radiotherapy (SABR) in inoperable stage I Lung Cancer"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_15"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-15)
 
 Instance: crane-cccn-quality-indicator-15
@@ -443,6 +477,7 @@ Description: "QI 15: Stereotactic Ablative Radiotherapy (SABR) in inoperable sta
 Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
+* name = "CraNE_CCCN_QI_15"
 * clinicalRecommendationStatement = "Target value: 35%"
 * group.population.code = #numerator
 * group.population.description = "Number of patients with stage I Lung Cancer not undergoing surgery who receive SABR"
@@ -463,6 +498,7 @@ Title: "Report Quality Indicator #16"
 Description: "QI 16: Interventional Bronchoscopy (Thermal Procedures and Stenting)"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_16"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-16)
 
 Instance: crane-cccn-quality-indicator-16
@@ -472,6 +508,7 @@ Description: "QI 16: Interventional Bronchoscopy (Thermal Procedures and Stentin
 Usage: #definition
 * insert Header
 * insert QualityIndicatorKind(outcome, continuous-variable, increase)
+* name = "CraNE_CCCN_QI_16"
 * clinicalRecommendationStatement = "Target value: ≥ 10/y"
 * definition = "Interventional bronchsopy (1): bronchoscopic dilation of the trachea with insertion of a synthetic splint (stent)"
 * definition = "Interventional bronchsopy (2): bronchoscopic dilation of the trachea with insertion of a metal splint (stent)"
@@ -491,6 +528,7 @@ Title: "Report Quality Indicator #17"
 Description: "QI 17: Chemo-immunotherapy in SCLC"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_17"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-17)
 
 Instance: crane-cccn-quality-indicator-17
@@ -501,6 +539,7 @@ Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
 * insert PrimaryCaseDefinition
+* name = "CraNE_CCCN_QI_17"
 * group.population.code = #numerator
 * group.population.description = "Primary cases of the denominator with combination PD-L1 antibody therapy (atezolizumab or durvalumab)"
 * group.population.criteria.language = #text/cql
@@ -520,6 +559,7 @@ Title: "Report Quality Indicator #18"
 Description: "QI 18: Clinical Trials and Research Study Access"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_18"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-18)
 
 Instance: crane-cccn-quality-indicator-18
@@ -529,6 +569,7 @@ Description: "QI 18: Clinical Trials and Research Study Access"
 Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
+* name = "CraNE_CCCN_QI_18"
 * clinicalRecommendationStatement = "Target value: ≥ 5%"
 * group.population.code = #numerator
 * group.population.description = "Number of patients with Lung Cancer enrolled in an interventional clinical trial or translational research"
@@ -549,6 +590,7 @@ Title: "Report Quality Indicator #19"
 Description: "QI 19: Post-operative bronchial stump/anastomotic insufficiency"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_19"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-19)
 
 Instance: crane-cccn-quality-indicator-19
@@ -559,6 +601,7 @@ Usage: #definition
 * insert Header
 * insert QualityIndicatorKind(outcome, ratio, decrease)
 * insert PrimaryCaseDefinition
+* name = "CraNE_CCCN_QI_19"
 * clinicalRecommendationStatement = "Plausibility corridor: < 0,01%; Target value: ≤ 5%"
 * group.population.code = #numerator
 * group.population.description = "Primary cases of the denominator with post-operative bronchial stump/anastomotic insufficiency"
@@ -579,6 +622,7 @@ Title: "Report Quality Indicator #20"
 Description: "QI 20: Maintenance therapy after definitive radiochemotherapy"
 Usage: #definition
 * insert Header
+* name = "CraNE_CCCN_Report_QI_20"
 * extension[qualityIndicatorDefinition].valueCanonical = Canonical(crane-cccn-quality-indicator-20)
 
 Instance: crane-cccn-quality-indicator-20
@@ -589,6 +633,7 @@ Usage: #definition
 * insert Header
 * insert QualityIndicatorKindDefaults
 * insert PrimaryCaseDefinition
+* name = "CraNE_CCCN_QI_20"
 * group.population.code = #numerator
 * group.population.description = "Primary cases of the denominator with durvalumab therapy started"
 * group.population.criteria.language = #text/cql
