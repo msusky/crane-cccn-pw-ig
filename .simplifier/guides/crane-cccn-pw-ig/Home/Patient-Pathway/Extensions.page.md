@@ -103,43 +103,9 @@
 
 ## {{page-title}}
 
-This implementation guide has been developed as part of the [CraNE Joint Action](https://crane4health.eu) research project.
-
-<!--
-
-### Impressum
-
-This implementation guide has been developed as part of the [CraNE Joint Action](https://crane4health.eu) research project.
-
-### Contact
-
-|Name|Institution|Contact Details|
+| Name | Title | Description |
 |:-|:-|:-|
-|Marcel Susky|Research Group Digital Health, TU Dresden| [marcel.susky@tu-dresden.de](mailto:marcel.susky@tu-dresden.de) |
-|Peggy Richter|Research Group Digital Health, TU Dresden| [peggy.richter@tu-dresden.de](mailto:peggy.richter@tu-dresden.de) |
-
-If you have any questions about this implementation guide, please send them by email or to the ["CraNE CCCN Pathway IG" channel in the FHIR Community Chat](https://chat.fhir.org/#narrow/stream/453317-CraNE-CCCN-Pathway-IG).
-
-### Contributors
-
-The following authors, listed in alphabetical order, contributed to the creation of this implementation guide.
-
-
-|Name|Institution|Contribution|
-|:-|:-|:-|
-|Marcel Susky|Research Group Digital Health, TU Dresden| Technical implementation and maintainance of this implementation guide |
-|Peggy Richter|Research Group Digital Health, TU Dresden| Requirements assessment and modeling of the patient pathway |
-
-### Copyright
-
-Copyright © 2024+ CraNE, Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or European Health and Digital Executive Agency (HaDEA). Neither the European Union nor the granting authority can be held responsible for them.
-
-Please note that this implementation guide is based on [FHIR Version R4](https://www.hl7.org/fhir/R4/), which is copyrighted by HL7 International.
-
-### Disclaimer
-
-The content of this implementation guide is public. Use this implementation guide at your own risk.
--->
+| [CraNE_CCCN_Report_Quality_Indicator_Extension](https://simplifier.net/crane-cccn-pw-ig/CraNE_CCCN_Report_Quality_Indicator_Extension/) | CraNE CCCN Report Quality Indicator Extension  | The extension for the CraNE Comprehensive Cancer Care Network Report Quality Indicator |
 
 <footer class="footer">
 <div class="eu-logo"><img src="https://crane4health.eu/wp-content/uploads/2022/10/cofounded-eu-logo.png"/></div>

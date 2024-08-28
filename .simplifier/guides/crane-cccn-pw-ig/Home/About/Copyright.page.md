@@ -10,6 +10,7 @@
         background-color: #cfdbd9 !important;
     }
 
+    footer,
     nav *,
     th,
     .under-construction span,
@@ -26,6 +27,7 @@
         text-transform: uppercase !important;
     }
 
+    footer,
     th,
     nav.navbar {
         background-color: #81368d !important;
@@ -47,6 +49,7 @@
     }
 
     a,
+    hl,
     .title *,
     .under-construction span {
         font-weight: bold;
@@ -74,10 +77,56 @@
     .under-construction span {
         vertical-align: middle;
     }
-</style>
 
+    footer.footer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 0;
+        margin: 200px 0 0 0;
+    }
+
+    footer.footer * {
+        height: auto;
+        width: auto;
+        margin: 10px;
+    }
+</style>
+<!--
 <div class="under-construction">
     <span>Disclaimer: This FHIR Implementation Guide is under construction. The content neither can be considered stable nor completed.</span>
 </div>
+-->
 
 ## {{page-title}}
+
+Copyright © 2024+ CraNE, Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or European Health and Digital Executive Agency (HaDEA). Neither the European Union nor the granting authority can be held responsible for them.
+
+Please note that this implementation guide is based on [FHIR Version R4](https://www.hl7.org/fhir/R4/), which is copyrighted by HL7 International.
+
+<footer class="footer">
+<div class="eu-logo"><img src="https://crane4health.eu/wp-content/uploads/2022/10/cofounded-eu-logo.png"/></div>
+<div>
+<h4>Project Management Team</h4>
+<p>
+National Institute of Public Health<br>
+of the Republic of Slovenia (NIJZ)<br>
+Trubarjeva 2, SI-1000 Ljubljana<br>
+Email: crane@nijz.si<br>
+Tel:  +386 1 330 2697
+</p>
+</div>
+<div>
+<h4>Dissemination Team</h4>
+<p>
+Regional Health Authority of Attica (1st YPE)<br>
+3, Zacharof Str., 11521, Athens, Greece<br>
+Email: crane.dissemination@1dype.gov.gr<br>
+Tel: +30 2132010552-474-483<br>
+Website: www.1dype.gov.gr
+</p>
+</div>
+</footer>

@@ -1,2 +1,10 @@
 - name: Index
   filename: Index.page.md
+- name: Contact
+  filename: Contact.page.md
+- name: Contributors
+  filename: Contributors.page.md
+- name: Copyright
+  filename: Copyright.page.md
+- name: Disclaimer
+  filename: Disclaimer.page.md
