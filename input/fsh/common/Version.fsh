@@ -1,5 +1,5 @@
 RuleSet: Version
-* version = "2024-05-31"
+* version = "1.0.0-alpha"
 
 RuleSet: VersionProfile
-* ^version = "2024-05-31"
+* ^version = "1.0.0-alpha"
